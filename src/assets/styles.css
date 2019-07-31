@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+body{
+    font-family: font-family, 'Merriweather', serif;
+    background: #FF5722;
+    color: #fbfff9;
+}
+.card{
+    /*color: #eee;*/
+}
+.slide1{
+    flex-direction: column!important;
+}
+.btn1{
+    --background: #0a0108;
+    height: 40px;
+    width: inherit;
+}
+.btn2{
+    --background: #0a0108;
+}
+@media screen and (max-width: 402px){
+    .btn2{
+        max-width: 98%;
+        font-size: 12px;
+    }
+    .cont{
+        font-size: 15px!important;
+        text-align: justify-all;
+    }
+    .hedwig{
+        width: 100%!important;
+        font-size: 16px!important;
+    }
+    .alert-title h2{
+        font-size: 14px;
+    }
+    .swiper-slide img {
+        width: auto;
+        max-width: 85%;
+        height: auto;
+        max-height: 64%;
+    }
+}
+h1{
+    color:#FFFFFF ;
+    text-align: center;
+    font-size: 50px;
+}
+h2{
+    color: #FFFFFF ;
+}
+P {
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: justify-all;
+}
+.logo{
+    position: relative;
+    margin: 0 auto;
+}
+#div{
+    max-height: available;
+}
+.alert2{
+    background: #ffd6a5;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: max-content;
+    height: max-content;
+}
+
+ .img2 {
+     width: 90%!important;
+     height: 90%!important;
+ }
+
+.card1{
+    width:  100%;
+    height: 90%;
+
+}
+
+.cont{
+    font-size: 20px;
+    color:#FFFFFF;
+
+}
+.btn , .btn1{
+    font-size: 20px;
+}
+
+.btn{
+    width: 300px;
+}
+.cards{
+    color: #fbfff9;
+}
