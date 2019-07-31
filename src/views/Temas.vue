@@ -17,7 +17,7 @@
             <ion-item>
                 <ion-label>La tilde diacrítica.</ion-label>
             </ion-item>
-            <ion-item>
+            <ion-item>ñ
                 <ion-label>Tilde en palabras compuestas.</ion-label>
             </ion-item>
             <ion-item>
