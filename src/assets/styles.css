@@ -95,3 +95,9 @@ P {
 .cards{
     color: #fbfff9;
 }
+ion-list{
+    background-color: #BDBDBD;
+}
+btna{
+    --background: #BDBDBD;
+}
