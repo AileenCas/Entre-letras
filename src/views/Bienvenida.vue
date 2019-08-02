@@ -117,7 +117,7 @@
                             text: '¡A la carga!',
                             handler: () => {
                                 let nombre = document.getElementById('nombre').value,
-                                    pass = document.getElementById('password').value
+                                    pass = document.getElementById('password').value;
                                 firebase.auth().signInWithEmailAndPassword(nombre, pass).then();
                                 this.$router.push({
                                     name: 'TableroPrincipal'
