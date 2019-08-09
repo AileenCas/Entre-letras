@@ -86,8 +86,8 @@
                             text: '¿Quieres continuar?',
                             handler: () => {
                                 let email = document.getElementById('email').value,
-                                    pass = document.getElementById('pass').value
-                                    , nombre = document.getElementById('nombre').value;
+                                    pass = document.getElementById('pass').value,
+                                    nombre = document.getElementById('nombre').value;
                                 firebase.auth().signOut().then();
                                 firebase.auth().createUserWithEmailAndPassword(email, pass).then();
                                 this.resentLoading();

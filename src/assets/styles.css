@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 body{
     font-family: font-family, 'Merriweather', serif;
-    background: #FF5722;
+    background: #283593;
     color: #fbfff9;
 }
 .card{
@@ -93,8 +93,16 @@ P {
     width: 300px;
 }
 .cards{
-    color: #fbfff9;
+    color: #212121;
+    background: #cedd3e;
 }
 .btnt{
-    --background: #f93f22;
+    --background:#893ab7a3;
+}
+.b{
+    display:flex;
+    align-items: center;
+}
+.imgtemas{
+
 }

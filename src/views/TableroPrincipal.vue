@@ -39,6 +39,9 @@
                     name: nombre
                 })
             }
+        },
+        mounted() {
+            document.body.style.background = "#283593";
         }
     }
 </script>

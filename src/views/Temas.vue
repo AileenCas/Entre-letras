@@ -1,39 +1,165 @@
-<template >
-    <div id="app"  >
-        <ion-nav>
-            <ion-button color="#BDBDBD" @click="atras()"> <ion-icon  name="arrow-back"></ion-icon></ion-button>
-            <ion-searchbar showCancelButton="always"></ion-searchbar>
-            <ion-button class="btnt" expand="full">  Palabras agudas.</ion-button>
-            <ion-button class="btnt" expand="full"> Palabras graves.</ion-button>
-            <ion-button class="btnt" expand="full"> Palabras esdrújulas.</ion-button>
-            <ion-button expand="full" class="btnt">  Palabras sobresdrújulas.</ion-button>
-            <ion-button expand="full" class="btnt"> Uso del punto.</ion-button>
-            <ion-button expand="full" class="btnt">Diptongo, triptongo y hiato.</ion-button>
-            <ion-button expand="full" class="btnt"> Uso de la coma.</ion-button>
-            <ion-button expand="full" class="btnt">La tilde diacrítica.</ion-button>
-            <ion-button expand="full" class="btnt">Tilde en palabras compuestas.</ion-button>
-            <ion-button expand="full" class="btnt">Uso de comillas.</ion-button>
-            <ion-button expand="full" class="btnt">Signos de exclamación.</ion-button>
-            <ion-button expand="full" class="btnt">Signos de exclamación.</ion-button>
-            <ion-button expand="full" class="btnt">Signos de interrogación.</ion-button>
-        </ion-nav>
+<template>
+    <div id="app" class="Temas">
+         <div class="b">
+             <ion-button color="#BDBDBD" @click="atras()">
+                 <ion-icon name="arrow-back"></ion-icon>
+             </ion-button>
+             <ion-searchbar showCancelButton="always"></ion-searchbar>
+         </div>
+        <div id="app2">
+            <ion-card  button="true" class="cards" @click="irA('agudas')">
+                <img  class="imgtemas" src="../assets/agudas.png">
+                <ion-card-content>
+                    Las palabras agudas son las que llevan acento en la última sílaba.
+                </ion-card-content>
+            </ion-card>
+            <ion-card  button="true" class="cards" @click="irA('Graves')">
+                <ion-card-header>
+                    <ion-card-title> Palabras graves</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Las palabras graves son la que llevan la intensidad de la voz en la penúltima sílaba.
+                </ion-card-content>
+            </ion-card>
 
+            <ion-card  button="true" class="cards" @click="irA('Esdru')">
+                <ion-card-header>
+                    <ion-card-title> Palabras esdrújulas</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Las palabras esdrújulas son las que llevan la intensidad de la voz en la antepenúltima sílaba.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Sobre')">
+                <ion-card-header>
+                    <ion-card-title> Palabras sobresdrújulas</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Las palabras sobresdrújulas son las que llevan la intensidad de la voz en la sílaba anterior a la antepenúltima sílaba.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Punto')">
+                <ion-card-header>
+                    <ion-card-title> Uso del punto</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    El punto como signo de puntuación se utiliza para señalar pautas largas o cortas así como el final de una oración o párrafo.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Diptongo')">
+                <ion-card-header>
+                    <ion-card-title> Diptongo</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    El diptongo es la combinación de dos vocales en una sílaba dentro de una palabra.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Triptongo')">
+                <ion-card-header>
+                    <ion-card-title> Triptongo</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    El triptongo es la sucesión de tres vocales en una misma sílaba: vocal cerrada (u/i) + vocal abierta tónica (a/e/o) + vocal cerrada (u/i).
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Hiato')">
+                <ion-card-header>
+                    <ion-card-title> Hiato </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    El hiato se da cuando la acentuación de una palabra, o su pronunciación, obliga a separar en diferentes sílabas a un diptongo o un triptongo.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Coma')">
+                <ion-card-header>
+                    <ion-card-title> Uso de la coma </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    La coma es un signo de puntuación que representa una pausa más breve que la del punto y se utiliza con frecuencia en toda clase de textos.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Tilde')">
+                <ion-card-header>
+                    <ion-card-title> La tilde </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Las tildes son signos gráficos para marcar acentos. En español existe solo un tipo de tilde al escribirla, y solo se hará sobre las vocales.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Dia')">
+                <ion-card-header>
+                    <ion-card-title>La tilde diacrítica </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    La tilde diácritica se usa para diferenciar palabras que se escriben igual pero significan cosas distintas.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Compuestas')">
+                <ion-card-header>
+                    <ion-card-title> Tilde en palabras compuestas </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Las palabras compuestas son aquellas palabras que se forman a partir de la unión de dos o más palabras simples.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Comillas')">
+                <ion-card-header>
+                    <ion-card-title> Uso de comillas </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Las comillas son signos tipográficos utilizados para marcar niveles distintos en una oración.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Exclama')">
+                <ion-card-header>
+                    <ion-card-title> Signos de exclamación </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Los signos de exclamación son signos ortográficos dobles utilizados para expresar enunciados cargados de emoción.
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card  button="true" class="cards" @click="irA('Inte')">
+                <ion-card-header>
+                    <ion-card-title> Signos de interrogación </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Los signos de interrogación son signos ortográficos dobles que se utilizan para indicar que un enunciado se transforma en una pregunta.
+                    Interrogar, significa, precisamente, preguntar o inquirir.
+                </ion-card-content>
+            </ion-card>
+    </div>
     </div>
 </template>
-
 <script>
 
     export default {
         name: "Temas",
         methods: {
-          atras:function () {
-              this.$ionic.navController.pop()
-          }
-                }
+            atras: function () {
+                this.$router.push({name: 'TableroPrincipal'})
+            },
+            irA: function (nombre) {
+                this.$router.push({
+                    name: nombre
+                })
             }
-
-
-
+        },
+        mounted() {
+            document.body.style.background = "#0d47a1";
+        }
+    }
 </script>
 
 <style scoped>
