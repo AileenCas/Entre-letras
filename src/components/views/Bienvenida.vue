@@ -130,7 +130,7 @@
             alert3: function () {
                 return this.$ionic.alertController.create({
                     header: 'Aprende con tus amigos',
-                        buttons: [{
+                    buttons: [{
                             text: 'Facebook',
                             icon: 'logo-facebook',
                             handler: () => {

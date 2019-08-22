@@ -103,6 +103,14 @@ P {
     display:flex;
     align-items: center;
 }
-.imgtemas{
-
+.cards2{
+    text-align: justify;
+}
+.imgl{
+    height:145px!important;
+    width:100px!important;
+    align-items: center;
+}
+#h2{
+    text-align: center;
 }

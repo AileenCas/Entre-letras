@@ -63,7 +63,7 @@
                     <img  class="imgtemas" src="../assets/triptongos.png">
                 </ion-card-header>
                 <ion-card-content>
-                    El triptongo es la sucesión de tres vocales en una misma sílaba: vocal cerrada (u/i) + vocal abierta tónica (a/e/o) + vocal cerrada (u/).
+                    El triptongo es la sucesión de tres vocales en una misma sílaba: vocal cerrada (u/i) + vocal abierta tónica (a/e/o) + vocal cerrada (u/i).
                 </ion-card-content>
             </ion-card>
 
