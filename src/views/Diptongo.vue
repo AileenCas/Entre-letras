@@ -3,6 +3,8 @@
         <ion-button color="#BDBDBD" @click="atras1()">
             <ion-icon name="arrow-back"></ion-icon>
         </ion-button>
+        <ion-button  expand="full" class="btnD" @click="vocales()" > ¡Espera! </ion-button>
+
         <h1>Diptongo </h1>
         <p> El diptongo es la combinación de dos vocales en una sílaba dentro de una palabra. </p>
         <p> Los tipos de diptongo pueden ser:</p>
@@ -62,7 +64,7 @@
         </ion-card>
     <ion-card>
             <ion-card-header>
-                <h2>UI</h2>
+                <h2>AI</h2>
             </ion-card-header>
             <ion-card-content class="cards2">
                 <ion-slides pager="true" :options="slideOpts">
@@ -94,6 +96,9 @@
                     <img  class="imgA" src="../assets/au2.png">
                 </ion-slide>
                 <ion-slide>
+                    <img  class="imgA" src="../assets/au3.png">
+                </ion-slide>
+                <ion-slide>
                     <img  class="imgA" src="../assets/au4.png">
                 </ion-slide>
             </ion-slides>
@@ -114,9 +119,30 @@
                 <ion-slide>
                     <img  class="imgA" src="../assets/ei3.png">
                 </ion-slide>
+                <ion-slide>
+                    <img  class="imgA" src="../assets/ei4.png">
+                </ion-slide>
             </ion-slides>
         </ion-card-content>
     </ion-card>
+        <ion-card>
+            <ion-card-header>
+                <h2>OI</h2>
+            </ion-card-header>
+            <ion-card-content class="cards2">
+                <ion-slides pager="true" :options="slideOpts">
+                    <ion-slide>
+                        <img  class="imgA" src="../assets/oi1.png">
+                    </ion-slide>
+                    <ion-slide>
+                        <img  class="imgA" src="../assets/oi2.png">
+                    </ion-slide>
+                    <ion-slide>
+                        <img  class="imgA" src="../assets/oi3.png">
+                    </ion-slide>
+                </ion-slides>
+            </ion-card-content>
+        </ion-card>
     </div>
     </template>
 <script>
@@ -124,13 +150,14 @@
         name: "Diptongo",
         methods: {
             atras1: function () {
+
                 this.$router.push({name: 'Temas'})
             },
             vocales() {
                 return this.$ionic.alertController.create({
-                    header: 'Antes de empezar esta lección, debes conocer algo importante.' +
-                        'Vocales débiles = vocales cerradas (i, a)\n' +
-                        'Vocales fuertes = vocales abiertas (a, e, o)\n'
+                    subHeader:'Vocales débiles = vocales cerradas (i, a).\n' +
+                'Vocales fuertes = vocales abiertas (a, e, o).',
+                    header:'Antes de empezar esta lección, debes conocer algo importante.',
                 }).then(a => a.present());
             },
         },

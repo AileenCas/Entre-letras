@@ -77,7 +77,6 @@
             alerta: function () {
                 return this.$ionic.alertController.create({
                     header: 'Regístrate',
-                    message: '',
                     inputs: [{type: "text", id: 'nombre', placeholder: "Ingresa tu nombre"},
                         {type: "text", placeholder: "Correo electrónico", id: 'email'},
                         {type: "password", placeholder: "Ingresa tu contraseña", id: 'pass'}],
@@ -130,29 +129,8 @@
             alert3: function () {
                 return this.$ionic.alertController.create({
                     header: 'Aprende con tus amigos',
-                        buttons: [{
-                            text: 'Facebook',
-                            icon: 'logo-facebook',
-                            handler: () => {
-                                console.log('face')
-                            },
-                        },
-                        {
-                            text: 'Instagram',
-                            icon: 'logo-instagram',
-                            handler: () => {
-                                console.log('insta')
-                            },
-                        },
-                        {
-                            text: 'Whatsapp',
-                            icon: 'logo-whatsapp',
-                            handler: () => {
-                                console.log('whatsapp')
-                            },
-                        },
-                        {
-                            text: 'Gmail',
+                        buttons: [
+                            {text: 'Gmail',
                             icon: 'mail',
                             handler: () => {
                                 console.log('mail')

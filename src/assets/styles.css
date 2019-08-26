@@ -4,9 +4,6 @@ body{
     background: #283593;
     color: #fbfff9;
 }
-.card{
-    /*color: #eee;*/
-}
 .slide1{
     flex-direction: column!important;
 }
@@ -15,13 +12,12 @@ body{
     height: 40px;
     width: inherit;
 }
-.btn2{
-    --background: #0a0108;
-}
+
 @media screen and (max-width: 402px){
     .btn2{
         max-width: 98%;
         font-size: 12px;
+        --background: #0a0108;
     }
     .cont{
         font-size: 15px!important;
@@ -48,6 +44,7 @@ h1{
 }
 h2{
     color: #FFFFFF ;
+    text-align: center;
 }
 P {
     color: #FFFFFF;
@@ -106,11 +103,10 @@ P {
 .cards2{
     text-align: justify;
 }
-.imgl{
-    height:145px!important;
-    width:100px!important;
-    align-items: center;
+.btnD{
+    --background: #000;
+    color:white;
 }
-#h2{
-    text-align: center;
+h3{
+   color: #cedd3e;
 }

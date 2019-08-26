@@ -4,7 +4,6 @@
              <ion-button color="#BDBDBD" @click="atras()">
                  <ion-icon name="arrow-back"></ion-icon>
              </ion-button>
-             <ion-searchbar showCancelButton="always"></ion-searchbar>
          </div>
         <div id="app2">
             <ion-card  button="true" class="cards" @click="irA('Agudas')">
@@ -58,7 +57,7 @@
                 </ion-card-content>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('Triptongo')">
+            <ion-card  button="true" class="cards" @click="irA('Triptongos')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/triptongos.png">
                 </ion-card-header>
@@ -152,9 +151,9 @@
             },
             irA: function (nombre) {
                 this.$router.push({
-                    name: nombre
-                })
-            }
+                    name: nombre})
+            },
+
         },
         mounted() {
             document.body.style.background = "#0d47a1";
