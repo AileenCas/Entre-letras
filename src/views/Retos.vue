@@ -1,93 +1,94 @@
 <template>
     <div id="app">
+        <h1>jsjsjs</h1>
         <div class="b">
             <ion-button color="#BDBDBD" @click="atras()">
                 <ion-icon name="arrow-back"></ion-icon>
             </ion-button>
         </div>
         <div id="app2">
-            <ion-card  button="true" class="cards" @click="irA('AgudasR')">
+            <ion-card  button="true" class="cards" @click="ira('AgudasR')">
                 <img  class="imgtemas" src="../assets/agudas.png">
             </ion-card>
-            <ion-card  button="true" class="cards" @click="irA('GravesR')">
+            <ion-card  button="true" class="cards" @click="ira('GravesR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/graves.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('EsdruR')">
+            <ion-card  button="true" class="cards" @click="ira('EsdruR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/esdru.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('SobreR')">
+            <ion-card  button="true" class="cards" @click="ira('SobreR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/sobre.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('PuntoR')">
+            <ion-card  button="true" class="cards" @click="ira('PuntoR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/punto.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('DiptongoR')">
+            <ion-card  button="true" class="cards" @click="ira('DiptongoR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/diptongo.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('TriptongosR')">
+            <ion-card  button="true" class="cards" @click="ira('TriptongosR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/triptongos.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('HiatoR')">
+            <ion-card  button="true" class="cards" @click="ira('HiatoR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/hiato.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('ComaR')">
+            <ion-card  button="true" class="cards" @click="ira('ComaR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/coma.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('TildeR')">
+            <ion-card  button="true" class="cards" @click="ira('TildeR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/tilde.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('DiaR')">
+            <ion-card  button="true" class="cards" @click="ira('DiaR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/dia.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('CompuestasR')">
+            <ion-card  button="true" class="cards" @click="ira('CompuestasR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/compu.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('ComillasR')">
+            <ion-card  button="true" class="cards" @click="ira('ComillasR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/comillas.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('ExclamaR')">
+            <ion-card  button="true" class="cards" @click="ira('ExclamaR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/exclamación.png">
                 </ion-card-header>
             </ion-card>
 
-            <ion-card  button="true" class="cards" @click="irA('InteR')">
+            <ion-card  button="true" class="cards" @click="ira('InteR')">
                 <ion-card-header>
                     <img  class="imgtemas" src="../assets/inte.png">
                 </ion-card-header>
@@ -98,12 +99,12 @@
 <script>
 
     export default {
-        name: "Retos",
+        name: "retos",
         methods: {
             atras: function () {
                 this.$router.push({name: 'TableroPrincipal'})
             },
-            irA: function (nombre) {
+            ira: function (nombre) {
                 this.$router.push({
                     name: nombre})
             },

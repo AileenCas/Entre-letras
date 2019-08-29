@@ -1,12 +1,13 @@
 <template>
     <div id="app">
+        <Menu/>
         <Toolbar/>
         <ion-card color="primary" button="true" class="cards" @click="irA('Temas')">
             <ion-card-header>
                 <ion-card-title>¡Amplía tus conocimientos !</ion-card-title>
             </ion-card-header>
         </ion-card>
-        <ion-card  color="primary" button="true" class="cards" @click="irA('Retos')">
+        <ion-card  color="primary" button="true" class="cards" @click="irA('retos')">
             <ion-card-header>
                 <ion-card-title>¡Ponte a prueba!</ion-card-title>
             </ion-card-header>
@@ -32,7 +33,8 @@
     export default {
         name: "TableroPrincipal",
 
-        components: {Menu, Toolbar},
+        // eslint-disable-next-line vue/no-unused-components
+        components: {Menu, Toolbar },
         methods: {
             irA: function (nombre) {
                 router.push({
