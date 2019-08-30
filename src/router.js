@@ -21,6 +21,7 @@ import Comillas from "./views/Comillas";
 import Inte from "./views/Inte";
 import Tilde from "./views/Tilde";
 import JuegoPreguntas from "./views/JuegoPreguntas";
+import Perfil from "./views/Perfil";
 
 
 Vue.use(Router);
@@ -31,7 +32,7 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'bienvenida',
+            name: ' Bienvenida',
             components: {main: Bienvenida}
         },
         {
@@ -155,6 +156,15 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: {main: Toolbar}
+
+        },
+        {
+            path: '/tablero/Perfil',
+            name: 'Perfil',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: {main: Perfil}
 
         },
     ]

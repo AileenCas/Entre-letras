@@ -110,3 +110,7 @@ P {
 h3{
    color: #cedd3e;
 }
+#btn, #BtnR{
+    width: 345px;
+    --background: #000;
+}

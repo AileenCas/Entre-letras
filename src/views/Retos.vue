@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-        <h1>jsjsjs</h1>
         <div class="b">
             <ion-button color="#BDBDBD" @click="atras()">
                 <ion-icon name="arrow-back"></ion-icon>

@@ -26,8 +26,8 @@
                     </ion-item>
                 </ion-radio-group>
             </ion-list>
-            <button class="btn btn-outline-success btn-block " @click="jugar">¡Enviar!</button>
-            <button class="btn btn-outline-primary btn-block " @click="formAgregar = !formAgregar">Agregar Pregunta</button>
+            <button  id="BtnR" class="btn btn-outline-success btn-block " @click="jugar()">¡Enviar!</button>
+            <button id="btn" class="btn btn-outline-primary btn-block " @click="formAgregar = !formAgregar">Agregar Pregunta</button>
         </div>
         <hr>
         <div v-show="formAgregar">
@@ -69,18 +69,12 @@
                 puntaje: 0,
                 conteo: 0,
                 respuestas: [
-                    {juego: true, p: "¿Cuanto es 2 + 2?", rc: '4', r1: '4', r2: '6', r3: '8', r4: '9'},
-                    {juego: false, p: "¿Cuanto es 4*4?", rc: '16', r1: '24', r2: '11', r3: '7', r4: '16'},
-                    {
-                        juego: false,
-                        p: "¿De que color es el caballo blanco de Simon bolivar?",
-                        rc: 'Blanco',
-                        r1: 'Azul',
-                        r2: 'Verde',
-                        r3: 'Blanco',
-                        r4: 'Rojo'
-                    }
-                ]
+                    {juego: true, p: "¿Cuál de estas palabras es aguda?", rc: 'Cayó.', r1: 'Árbol.', r2: 'Sábado.', r3: 'Miércoles.', r4: 'Ejército.'},
+                    {juego: false, p: "¿Cuál de estas palabras es aguda? ", rc: 'Atardecer.', r1: ' Agua.', r2: 'Antes.', r3: 'Albóndiga.', r4: '16'},
+                    {juego: false, p: 'La palabra: "Balón" es:', rc: 'Sobresdrújula.', r1: 'Grave.', r2: 'Esdrújula.', r3: 'Aguda.'},
+                    {juego: true, p: "¿Cuál de estas palabras NO es aguda?", rc: 'París.', r1: 'Útil.', r2: 'Alemán.', r3: 'Zapato.', r4: 'Volver.'},
+                    {juego: false, p: "¿Cuál de estas palabras NO es aguda? ", rc: 'Bebé.', r1:'Águila.', r2: 'Perú.', r3: 'Jamás.'},
+                    {juego: false, p: 'La palabra: "Cantar" es:', rc: 'Sobresdrújula.', r1: 'Grave.', r2: 'Esdrújula.', r3: 'Aguda.'}]
             }
         },
         methods: {
