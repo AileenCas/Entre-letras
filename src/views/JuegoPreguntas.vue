@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div v-for="respuesta, index in respuestas" v-if="respuesta.juego">
+        <div v-for="respuesta, index in respuestas" v-show="respuesta.juego">
             <h2>{{respuesta.p}}</h2><br>
             <ion-list>
                 <ion-radio-group>
@@ -26,24 +26,28 @@
                     </ion-item>
                 </ion-radio-group>
             </ion-list>
-            <button  id="BtnR" class="btn btn-outline-success btn-block " @click="jugar()">¡Enviar!</button>
-            <button id="btn" class="btn btn-outline-primary btn-block " @click="formAgregar = !formAgregar">Agregar Pregunta</button>
+            <button id="BtnR" class="btn btn-outline-success btn-block " @click="jugar()">¡Enviar!</button>
+            <button id="btn" class="btn btn-outline-primary btn-block " @click="formAgregar = !formAgregar">Agregar
+                Pregunta
+            </button>
         </div>
         <hr>
         <div v-show="formAgregar">
             <form v-on:submit.prevent="agregar">
                 <label for="ap1">Pregunta</label>
-                <input class="form-control" id="ap1" type="text" placeholder="Ingrese la pregunta:" name="op" v-model="p"><br>
+                <input class="form-control" id="ap1" type="text" placeholder="Ingrese la pregunta:" name="op"
+                       v-model="p"><br>
                 <label for="ar1">Respuesta 1:</label>
-                <input class="form-control" id="ar1" type="text"  v-model="or1"><br>
+                <input class="form-control" id="ar1" type="text" v-model="or1"><br>
                 <label for="ar2">Respuesta 2:</label>
                 <input class="form-control" id="ar2" type="text" name="op" v-model="or2"><br>
                 <label for="ar3">Respuesta 3:</label>
-                <input class="form-control" id="ar3" type="text"  name="op" v-model="or3"><br>
+                <input class="form-control" id="ar3" type="text" name="op" v-model="or3"><br>
                 <label for="ar4">Respuesta 4:</label>
-                <input class="form-control" id="ar4" type="text"  name="op" v-model="or4"><br>
+                <input class="form-control" id="ar4" type="text" name="op" v-model="or4"><br>
                 <label for="arc">Respuesta Correcta:</label>
-                <input class="form-control" id="arc" type="text" placeholder="Respuesta correcta" name="op" v-model="orc"><br>
+                <input class="form-control" id="arc" type="text" placeholder="Respuesta correcta" name="op"
+                       v-model="orc"><br>
                 <button class="btn btn-block btn-primary" @click="anterior">Añadir</button>
             </form>
         </div>
@@ -69,12 +73,57 @@
                 puntaje: 0,
                 conteo: 0,
                 respuestas: [
-                    {juego: true, p: "¿Cuál de estas palabras es aguda?", rc: 'Cayó.', r1: 'Árbol.', r2: 'Sábado.', r3: 'Miércoles.', r4: 'Ejército.'},
-                    {juego: false, p: "¿Cuál de estas palabras es aguda? ", rc: 'Atardecer.', r1: ' Agua.', r2: 'Antes.', r3: 'Albóndiga.', r4: '16'},
-                    {juego: false, p: 'La palabra: "Balón" es:', rc: 'Sobresdrújula.', r1: 'Grave.', r2: 'Esdrújula.', r3: 'Aguda.'},
-                    {juego: true, p: "¿Cuál de estas palabras NO es aguda?", rc: 'París.', r1: 'Útil.', r2: 'Alemán.', r3: 'Zapato.', r4: 'Volver.'},
-                    {juego: false, p: "¿Cuál de estas palabras NO es aguda? ", rc: 'Bebé.', r1:'Águila.', r2: 'Perú.', r3: 'Jamás.'},
-                    {juego: false, p: 'La palabra: "Cantar" es:', rc: 'Sobresdrújula.', r1: 'Grave.', r2: 'Esdrújula.', r3: 'Aguda.'}]
+                    {
+                        juego: true,
+                        p: "¿Cuál de estas palabras es aguda?",
+                        rc: 'Cayó.',
+                        r1: 'Árbol.',
+                        r2: 'Sábado.',
+                        r3: 'Miércoles.',
+                        r4: 'Ejército.'
+                    },
+                    {
+                        juego: false,
+                        p: "¿Cuál de estas palabras es aguda? ",
+                        rc: 'Atardecer.',
+                        r1: ' Agua.',
+                        r2: 'Antes.',
+                        r3: 'Albóndiga.',
+                        r4: '16'
+                    },
+                    {
+                        juego: false,
+                        p: 'La palabra: "Balón" es:',
+                        rc: 'Sobresdrújula.',
+                        r1: 'Grave.',
+                        r2: 'Esdrújula.',
+                        r3: 'Aguda.'
+                    },
+                    {
+                        juego: false,
+                        p: "¿Cuál de estas palabras NO es aguda?",
+                        rc: 'París.',
+                        r1: 'Útil.',
+                        r2: 'Alemán.',
+                        r3: 'Zapato.',
+                        r4: 'Volver.'
+                    },
+                    {
+                        juego: false,
+                        p: "¿Cuál de estas palabras NO es aguda? ",
+                        rc: 'Bebé.',
+                        r1: 'Águila.',
+                        r2: 'Perú.',
+                        r3: 'Jamás.'
+                    },
+                    {
+                        juego: false,
+                        p: 'La palabra: "Cantar" es:',
+                        rc: 'Sobresdrújula.',
+                        r1: 'Grave.',
+                        r2: 'Esdrújula.',
+                        r3: 'Aguda.'
+                    }]
             }
         },
         methods: {

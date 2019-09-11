@@ -2,12 +2,6 @@
     <div id="app">
         <Menu/>
         <Toolbar/>
-        <div class="b">
-            <ion-button color="#BDBDBD" @click="atras()">
-                <ion-icon name="arrow-back"></ion-icon>
-            </ion-button>
-        </div>
-        <div id="app2">
             <ion-card button="true" class="cards" @click="ira('AgudasR')">
                 <img class="imgtemas" src="../assets/agudas.png">
             </ion-card>
@@ -95,7 +89,6 @@
                 </ion-card-header>
             </ion-card>
         </div>
-    </div>
 </template>
 <script>
     import Toolbar from './Toolbar'
@@ -105,9 +98,6 @@
         name: "retos",
         components: {Toolbar, Menu},
         methods: {
-            atras: function () {
-                this.$router.push({name: 'TableroPrincipal'})
-            },
             ira: function (nombre) {
                 this.$router.push({
                     name: nombre
