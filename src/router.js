@@ -22,6 +22,7 @@ import Inte from "./views/Inte";
 import Tilde from "./views/Tilde";
 import JuegoPreguntas from "./views/JuegoPreguntas";
 import Perfil from "./views/Perfil";
+import Comparte from "./views/Comparte";
 
 
 Vue.use(Router);
@@ -146,7 +147,7 @@ export default new Router({
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: {main: retos}
+            components: {main: retos}
 
         },
         {
@@ -155,17 +156,22 @@ export default new Router({
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: {main: Toolbar}
+            components: {main: Toolbar}
 
         },
         {
-            path: '/tablero/Perfil',
+            path: '/tablero/Menu/Perfil',
             name: 'Perfil',
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: {main: Perfil}
+            components: {main: Perfil}
 
         },
+        {
+            path: '/tablero/Comparte',
+            name: 'Comparte',
+            components: {main: Comparte}
+        }
     ]
 })

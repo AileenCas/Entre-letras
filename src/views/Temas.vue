@@ -4,6 +4,9 @@
         <Toolbar/>
         <H1>Temas</H1>
         <div id="app2">
+            <ion-button color="#BDBDBD" @click="atras1()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
             <ion-card button="true" class="cards" @click="irA('Agudas')">
                 <img class="imgtemas" src="../assets/agudas.png">
                 <ion-card-content>
@@ -160,7 +163,7 @@
             Toolbar, Menu
         },
         methods: {
-            atras: function () {
+            atras1: function () {
                 this.$router.push({name: 'TableroPrincipal'})
             },
             irA: function (nombre) {

@@ -90,7 +90,7 @@
                 } else if (this.respuestas[pos].rc === this.op4) {
                     this.gano();
                 } else {
-                    alert('¡Fallaste!');
+                    alert('¡Muy bien!');
                     this.op1 = '';
                     this.op2 = '';
                     this.op3 = '';

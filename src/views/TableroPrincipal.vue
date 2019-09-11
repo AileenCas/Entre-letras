@@ -4,7 +4,7 @@
         <Toolbar/>
         <ion-card color="primary" button="true" class="cards" @click="irA('Temas')">
             <ion-card-header>
-                <ion-card-title>¡Amplía tus conocimientos !</ion-card-title>
+                <ion-card-title>¡Amplía tus conocimientos!</ion-card-title>
             </ion-card-header>
         </ion-card>
         <ion-card  color="primary" button="true" class="cards" @click="irA('retos')">

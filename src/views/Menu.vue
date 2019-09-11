@@ -10,7 +10,7 @@
                 <ion-list>
                     <ion-item button="true" @click="Inicio()"><ion-icon name="home"></ion-icon> <ion-label>Inicio</ion-label></ion-item>
                     <ion-item button="true" @click="Perfil()"><ion-icon name="person"></ion-icon> <ion-label>¡Ve a tu perfil!</ion-label></ion-item>
-                    <ion-item button="true" @click="Comparte"><ion-icon name="people"></ion-icon> <ion-label>¡Comparte con tus amigos!</ion-label></ion-item>
+                    <ion-item button="true" @click="Comparte()"><ion-icon name="people"></ion-icon> <ion-label>¡Comparte con tus amigos!</ion-label></ion-item>
                     <ion-item button="true" @click="Ayuda()"><ion-icon name="help-circle"></ion-icon> <ion-label>¿Necesitas ayuda?</ion-label></ion-item>
                 </ion-list>
             </ion-content>
@@ -23,7 +23,7 @@
         name: 'Menu',
         methods: {
             Inicio: function () {
-                this.$router.push({name: 'Bienvenida'})
+                this.$router.push({name: 'TableroPrincipal'})
             },
             Perfil: function () {
                 this.$router.push({name:'Perfil'})
@@ -37,7 +37,6 @@
             },
             Ayuda: function () {
                 return this.$ionic.push({name:'Ayuda'})
-
             },
         },
     }
