@@ -23,6 +23,9 @@ import Tilde from "./views/Tilde";
 import JuegoPreguntas from "./views/JuegoPreguntas";
 import Perfil from "./views/Perfil";
 import Comparte from "./views/Comparte";
+import JUEGO1 from "./views/JUEGO1";
+import JUEGO2 from "./views/JUEGO2";
+import AgudasR from "./views/AgudasR";
 
 
 Vue.use(Router);
@@ -172,6 +175,22 @@ export default new Router({
             path: '/tablero/Comparte',
             name: 'Comparte',
             components: {main: Comparte}
-        }
+        },
+        {
+            path:'/tablero/JUEGO1',
+            name: 'JUEGO1',
+            components:{main: JUEGO1 }
+        },
+        {
+            path:'/tablero/retos/AgudasR',
+            NAME:'AgudasR',
+            components:{main: AgudasR}
+        },
+        {
+            path:'/tablero/JUEGO2',
+            name: 'JUEGO2',
+            components:{main: JUEGO2 }
+        },
+
     ]
 })
