@@ -1,10 +1,10 @@
 <template>
     <div id="app">
-    <Menu/>
-    <Toolbar/>
-        <ion-card button="true" class="cards" @click="irA('Agu1')"><h2>¡Escoge!</h2></ion-card>
-        <ion-card button="true" class="cards" @click="irA('Agu2')"><h2>¡Relaciona!</h2></ion-card>
-        <ion-card button="true" class="cards" @click="irA('Agu3')"><h2>¡Arrastra!</h2></ion-card>
+        <Menu/>
+        <Toolbar/>
+        <ion-card button="true" class="cards" @click="irA('Sobre1')"><h2>¡Escoge!</h2></ion-card>
+        <ion-card button="true" class="cards" @click="irA('Sobre2')"><h2>¡Relaciona!</h2></ion-card>
+        <ion-card button="true" class="cards" @click="irA('Sobre3')"><h2>¡Arrastra!</h2></ion-card>
     </div>
 </template>
 
@@ -12,7 +12,7 @@
     import Toolbar from './Toolbar'
     import Menu from './Menu'
     export default {
-        name: "AgudasR",
+        name: "SobreR",
         components: {Toolbar, Menu},
         methods: {
             irA: function (nombre) {

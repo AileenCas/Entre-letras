@@ -1,27 +1,24 @@
 <template>
     <div id="app">
-        <div v-for="respuesta, index in respuestas" v-show="respuesta.juego">
+        <div v-for="respuesta in respuestas" v-show="respuesta.juego">
             <h2>{{respuesta.p}}</h2><br>
             <ion-list>
                 <ion-radio-group>
+                    <ion-radio type="text" style="display: none" id="posicion" :value="respuesta.i"></ion-radio>
                     <ion-item>
                         <ion-label for="op1">{{respuesta.r1}}</ion-label>
-                        <ion-radio style="display: none" slot="start" id="posicion" :value="index" checked></ion-radio>
                         <ion-radio id="op1" type="radio" :value="respuesta.r1" name="op"></ion-radio>
                     </ion-item>
                     <ion-item>
                         <ion-label for="op2">{{respuesta.r2}}</ion-label>
-                        <ion-radio style="display: none" slot="start" id="posicion" :value="index" checked></ion-radio>
                         <ion-radio id="op2" type="radio" :value="respuesta.r2" name="op"></ion-radio>
                     </ion-item>
                     <ion-item>
                         <ion-label for="op3">{{respuesta.r3}}</ion-label>
-                        <ion-radio style="display: none" slot="start" id="posicion" :value="index" checked></ion-radio>
-                        <ion-radio id="op3" type="radio" :value="respuesta.r2" name="op"></ion-radio>
+                        <ion-radio id="op3" type="radio" :value="respuesta.r3" name="op"></ion-radio>
                     </ion-item>
                     <ion-item>
                         <ion-label for="op2">{{respuesta.r4}}</ion-label>
-                        <ion-radio style="display: none" slot="start" id="posicion" :value="index" checked></ion-radio>
                         <ion-radio id="op4" type="radio" :value="respuesta.r4" name="op"></ion-radio>
                     </ion-item>
                 </ion-radio-group>
@@ -80,16 +77,18 @@
                         r1: 'Árbol.',
                         r2: 'Sábado.',
                         r3: 'Miércoles.',
-                        r4: 'Ejército.'
+                        r4: 'Cayó.',
+                        i: 0
                     },
                     {
                         juego: false,
                         p: "¿Cuál de estas palabras es aguda? ",
                         rc: 'Atardecer.',
                         r1: ' Agua.',
-                        r2: 'Antes.',
+                        r2: 'Atardecer.',
                         r3: 'Albóndiga.',
-                        r4: '16'
+                        r4: '16',
+                        i:1
                     },
                     {
                         juego: false,
@@ -97,7 +96,9 @@
                         rc: 'Sobresdrújula.',
                         r1: 'Grave.',
                         r2: 'Esdrújula.',
-                        r3: 'Aguda.'
+                        r3: 'Aguda.',
+                        r4: 'Sobresdrújula',
+                        i:2
                     },
                     {
                         juego: false,
@@ -106,7 +107,8 @@
                         r1: 'Útil.',
                         r2: 'Alemán.',
                         r3: 'Zapato.',
-                        r4: 'Volver.'
+                        r4: 'Volver.',
+                        i:3
                     },
                     {
                         juego: false,
@@ -114,7 +116,8 @@
                         rc: 'Bebé.',
                         r1: 'Águila.',
                         r2: 'Perú.',
-                        r3: 'Jamás.'
+                        r3: 'Jamás.',
+                        i:4
                     },
                     {
                         juego: false,
@@ -122,7 +125,8 @@
                         rc: 'Sobresdrújula.',
                         r1: 'Grave.',
                         r2: 'Esdrújula.',
-                        r3: 'Aguda.'
+                        r3: 'Aguda.',
+                        i:5
                     }]
             }
         },
@@ -130,6 +134,7 @@
             jugar: function () {
                 this.conteo = Number.parseInt(document.getElementById('posicion').value);
                 let pos = document.getElementById('posicion').value;
+                console.log(this.conteo);
                 if (this.respuestas[pos].rc === this.op1) {
                     this.gano();
                 } else if (this.respuestas[pos].rc === this.op2) {
@@ -139,7 +144,7 @@
                 } else if (this.respuestas[pos].rc === this.op4) {
                     this.gano();
                 } else {
-                    alert('¡Muy bien!');
+                    alert('¡Perdiste!');
                     this.op1 = '';
                     this.op2 = '';
                     this.op3 = '';

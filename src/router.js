@@ -26,6 +26,20 @@ import Comparte from "./views/Comparte";
 import JUEGO1 from "./views/JUEGO1";
 import JUEGO2 from "./views/JUEGO2";
 import AgudasR from "./views/AgudasR";
+import GravesR from "./views/GravesR";
+import EsdruR from "./views/EsdruR";
+import SobreR from "./views/SobreR";
+import PuntoR from "./views/PuntoR";
+import DiptongoR from "./views/DiptongoR";
+import TriptongosR from "./views/TriptongosR";
+import HiatoR from "./views/HiatoR";
+import ComaR from "./views/ComaR";
+import TildeR from "./views/TildeR";
+import DiaR from "./views/DiaR";
+import CompuestasR from "./views/CompuestasR";
+import ComillasR from "./views/ComillasR";
+import ExclaR from "./views/ExclaR";
+import InteR from "./views/InteR";
 
 
 Vue.use(Router);
@@ -98,7 +112,7 @@ export default new Router({
             components: {main: Hiato}
         },
         {
-            path: '/tablero/Retos/JuegoPreguntas',
+            path: '/tablero/retos/JuegoPreguntas',
             name: 'JuegoPreguntas',
             components: {main: JuegoPreguntas}
         },
@@ -183,14 +197,83 @@ export default new Router({
         },
         {
             path:'/tablero/retos/AgudasR',
-            NAME:'AgudasR',
+            name:'AgudasR',
             components:{main: AgudasR}
+        },
+        {
+            path:'/tablero/retos/GravesR',
+            name:'GravesR',
+            components:{main: GravesR}
+        },
+        {
+            path:'/tablero/retos/EsdruR',
+            name:'EsdruR',
+            components:{main: EsdruR}
+        },
+        {
+            path:'/tablero/retos/SobreR',
+            name:'SobreR',
+            components:{main: SobreR}
+        },
+        {
+            path:'/tablero/retos/PuntoR',
+            name:'PuntoR',
+            components:{main: PuntoR}
+        },
+        {
+            path:'/tablero/retos/DiptongoR',
+            name:'DiptongoR',
+            components:{main: DiptongoR}
+        },
+        {
+            path:'/tablero/retos/TriptongosR',
+            name:'TriptongosR',
+            components:{main: TriptongosR}
+        },
+        {
+            path:'/tablero/retos/HiatoR',
+            name:'HiatoR',
+            components:{main: HiatoR}
+        },
+        {
+            path:'/tablero/retos/ComaR',
+            name:'ComaR',
+            components:{main: ComaR}
+        },
+        {
+            path:'/tablero/retos/TildeR',
+            name:'TildeR',
+            components:{main: TildeR}
+        },
+        {
+            path:'/tablero/retos/DiaR',
+            name:'DiaR',
+            components:{main: DiaR}
+        },
+        {
+            path:'/tablero/retos/CompuestasR',
+            name:'CompuestasR',
+            components:{main:CompuestasR}
+        },
+        {
+            path:'/tablero/retos/ComillasR',
+            name:'ComillasR',
+            components:{main: ComillasR}
+        },
+        {
+            path:'/tablero/retos/ExclaR',
+            name:'ExclaR',
+            components:{main: ExclaR}
+        },
+        {
+            path:'/tablero/retos/InteR',
+            name:'InteR',
+            components:{main: InteR}
         },
         {
             path:'/tablero/JUEGO2',
             name: 'JUEGO2',
             components:{main: JUEGO2 }
         },
-
     ]
 })
