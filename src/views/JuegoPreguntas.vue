@@ -52,10 +52,12 @@
 </template>
 
 <script>
+    import firebase from 'firebase'
     export default {
         name: "JuegoPreguntas",
         data() {
             return {
+
                 op1: '',
                 op2: '',
                 op3: '',
@@ -69,70 +71,12 @@
                 formAgregar: false,
                 puntaje: 0,
                 conteo: 0,
-                respuestas: [
-                    {
-                        juego: true,
-                        p: "¿Cuál de estas palabras es aguda?",
-                        rc: 'Cayó.',
-                        r1: 'Árbol.',
-                        r2: 'Sábado.',
-                        r3: 'Miércoles.',
-                        r4: 'Cayó.',
-                        i: 0
-                    },
-                    {
-                        juego: false,
-                        p: "¿Cuál de estas palabras es aguda? ",
-                        rc: 'Atardecer.',
-                        r1: ' Agua.',
-                        r2: 'Atardecer.',
-                        r3: 'Albóndiga.',
-                        r4: '16',
-                        i:1
-                    },
-                    {
-                        juego: false,
-                        p: 'La palabra: "Balón" es:',
-                        rc: 'Sobresdrújula.',
-                        r1: 'Grave.',
-                        r2: 'Esdrújula.',
-                        r3: 'Aguda.',
-                        r4: 'Sobresdrújula',
-                        i:2
-                    },
-                    {
-                        juego: false,
-                        p: "¿Cuál de estas palabras NO es aguda?",
-                        rc: 'París.',
-                        r1: 'Útil.',
-                        r2: 'Alemán.',
-                        r3: 'Zapato.',
-                        r4: 'Volver.',
-                        i:3
-                    },
-                    {
-                        juego: false,
-                        p: "¿Cuál de estas palabras NO es aguda? ",
-                        rc: 'Bebé.',
-                        r1: 'Águila.',
-                        r2: 'Perú.',
-                        r3: 'Jamás.',
-                        i:4
-                    },
-                    {
-                        juego: false,
-                        p: 'La palabra: "Cantar" es:',
-                        rc: 'Sobresdrújula.',
-                        r1: 'Grave.',
-                        r2: 'Esdrújula.',
-                        r3: 'Aguda.',
-                        i:5
-                    }]
             }
         },
         methods: {
             jugar: function () {
-                this.conteo = Number.parseInt(document.getElementById('posicion').value);
+               console.log(firebase.firestore().app);
+               /* this.conteo = Number.parseInt(document.getElementById('posicion').value);
                 let pos = document.getElementById('posicion').value;
                 console.log(this.conteo);
                 if (this.respuestas[pos].rc === this.op1) {
@@ -150,7 +94,7 @@
                     this.op3 = '';
                     this.op4 = '';
                     this.perdio();
-                }
+                }*/
             },
             anterior: function () {
                 if (this.respuestas[this.conteo - 1] != null) {
