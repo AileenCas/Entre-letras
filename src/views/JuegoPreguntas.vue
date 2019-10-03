@@ -73,9 +73,14 @@
                 conteo: 0,
             }
         },
+        mounted(){
+            firebase.firestore().collection("Diptongo").doc("1").get().then(doc => {
+              console.log(doc.data())
+            });
+        },
         methods: {
             jugar: function () {
-               console.log(firebase.firestore().app);
+
                /* this.conteo = Number.parseInt(document.getElementById('posicion').value);
                 let pos = document.getElementById('posicion').value;
                 console.log(this.conteo);

@@ -1,7 +1,8 @@
 <template>
+    <div id="root">
     <div class="div1" ondrop="drop()" ondragover="allowDrop()"></div>
    <img src="../assets/lupita-t.png"  ondragstart="drag()">
-
+    </div>
 </template>
 
 <script>
