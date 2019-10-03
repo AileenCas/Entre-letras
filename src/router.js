@@ -20,7 +20,7 @@ import Compuestas from "./views/Compuestas";
 import Comillas from "./views/Comillas";
 import Inte from "./views/Inte";
 import Tilde from "./views/Tilde";
-import JuegoPreguntas from "./views/JuegoPreguntas";
+import Diptongo1 from "./views/Diptongo1";
 import Perfil from "./views/Perfil";
 import Comparte from "./views/Comparte";
 import JUEGO1 from "./views/JUEGO1";
@@ -112,9 +112,9 @@ export default new Router({
             components: {main: Hiato}
         },
         {
-            path: '/tablero/retos/JuegoPreguntas',
-            name: 'JuegoPreguntas',
-            components: {main: JuegoPreguntas}
+            path: '/tablero/retos/diptongo1',
+            name: 'Diptongo1',
+            components: {main: Diptongo1}
         },
         {
             path: '/tablero/juegos/Exclama',
