@@ -128,3 +128,9 @@ h3{
     display: flex;
     flex-direction: row-reverse;
 }
+.div1 {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
