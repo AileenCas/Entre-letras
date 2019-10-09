@@ -77,7 +77,7 @@
                 </ion-card-header>
             </ion-card>
 
-            <ion-card button="true" class="cards" @click="irA('ExclamaR')">
+            <ion-card button="true" class="cards" @click="irA('ExclaR')">
                 <ion-card-header>
                     <img class="imgtemas" src="../assets/exclamación.png">
                 </ion-card-header>

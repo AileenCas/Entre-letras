@@ -2,11 +2,11 @@
     <ion-app>
         <Toolbar/>
         <Menu/>
-        <ion-icon name="person"></ion-icon>
+        <img  class="icon" src="../assets/icon.png">
         <ion-input id="nombre">Usuario</ion-input>
         <ion-input id="telefono"> Teléfono</ion-input>
         <ion-input id="email"> Correo electrónico</ion-input>
-        <ion-button @click="actualizar">Actualizar datos</ion-button>
+        <ion-button class="btn" @click="actualizar">Actualizar datos</ion-button>
     </ion-app>
 </template>
 <script>

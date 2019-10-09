@@ -1,11 +1,12 @@
 <template>
-<div id="app">
-    <Menu/>
-    <Toolbar/>
-    <ion-card button="true" class="cards" @click="irA('Excla1')"><h2>¡Escoge!</h2></ion-card>
-    <ion-card button="true" class="cards" @click="irA('Excla2')"><h2>¡Relaciona!</h2></ion-card>
-    <ion-card button="true" class="cards" @click="irA('Excla3')"><h2>¡Arrastra!</h2></ion-card>
-</div>
+    <div id="app">
+        <Menu/>
+        <Toolbar/>
+        <img  CLASS="icon" src="../assets/lupito-t.png" >
+        <ion-button expand="full"   class="btnD" @click="Horro()">¡Alto Ahí!</ion-button>
+        <ion-card button="true" class="card" @click="irA('Excla1')"><h2>¡Escoge!</h2></ion-card>
+        <ion-card button="true" class="card" @click="irA('Excla2')"><h2>¡Arrastra!</h2></ion-card>
+    </div>
 </template>
 
 <script>
@@ -19,6 +20,12 @@
                 this.$router.push({
                     name: nombre
                 })
+            },
+            Horro(){
+                return this.$ionic.alertController.create({
+                    header: '¡Hola novato! ¿Me recuerdas? Es hora de poner a prueba tus conocimientos.',
+                    subHeader:'¡Suerte al intentar vencerme!'
+                }).then(a => a.present());
             },
         },
     }

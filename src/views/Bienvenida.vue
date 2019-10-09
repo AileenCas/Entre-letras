@@ -185,11 +185,9 @@
                 return this.$ionic.alertController.create({
                     header: '¡Hola! Soy Hedwig, la lechuza de la ortografía.\n' +
                         'Te doy la bienvenida a uno de los mejores sitios de interacción que te llevarán por una aventura\n' +
-                        'llena de magia y sorpresas, ¿estás listo para demostrar cuánto sabes? Juntos aprenderemos a usar\n' +
+                        'llena de magia ¿estás listo para demostrar cuánto sabes? Juntos aprenderemos a usar\n' +
                         'la magia de las palabras. ¡Lucharemos contra Horrógrafo! El villano de la ortografía, por ello te\n' +
-                        'ofreceré las mejores armas que hay en nuestro arsenal de la literatura: la gramática será tu\n' +
-                        'espada, la semántica tu escudo y la ortografía tu armadura.\n' +
-                        '¡Ya estamos preparados! ¡A la carga!',
+                        'ofreceré las mejores armas que hay en nuestro arsenal de la literatura: la ortografía será tu armadura. ',
                     cssClass: 'hedwig'
 
                 }).then(a => a.present());

@@ -12,11 +12,6 @@
                 <ion-card-title>¡Ponte a prueba!</ion-card-title>
             </ion-card-header>
         </ion-card>
-        <ion-card  color="primary" button="true" class="cards" @click="irA('Comparte')">
-            <ion-card-header>
-                <ion-card-title>¡Participa con tus amigos!</ion-card-title>
-            </ion-card-header>
-        </ion-card>
         <ion-card color="primary" button="true" class="cards" @click="irA('Resultados')">
             <ion-card-header>
                 <ion-card-title>¡Conoce tus resultados!</ion-card-title>
