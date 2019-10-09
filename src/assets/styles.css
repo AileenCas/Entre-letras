@@ -145,7 +145,13 @@ h3{
     color: #212121;
     background: #dd6500;
 }
-.div1{
-    display: flex;
-    justify-content: space-around;
+.re{
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.re1{
+    color: white;
 }

@@ -6,6 +6,7 @@ import Perfil from "./views/Perfil";
 import Bienvenida from "./views/Bienvenida";
 import Temas from "./views/Temas";
 import retos from "./views/Retos";
+import Resultados from "./views/Resultados";
 import Agudas from "./views/Agudas";
 import Agudas1 from "./views/Agudas1";
 import AgudasR from "./views/AgudasR";
@@ -93,6 +94,15 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             components: {main: retos}
+
+        },
+        {
+            path: '/tablero/Resultados',
+            name: 'Resultados',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            components: {main: Resultados}
 
         },
         {
