@@ -77,7 +77,7 @@
                         this.componentKey += 1;
                         //this.$forceUpdate();
                     } else {
-                        alert('¡Perdiste!');
+                        this.mostrarToast("Fallaste :( ¡Intentalo de nuevo! Se te restará un punto.");
                         this.perdio();
                     }
                 });
@@ -92,7 +92,6 @@
                 alert('siguiente')
             },
             gano: function () {
-                alert('¡Ganaste!');
                 this.number++;
                 this.puntaje++;
                 this.op1 = '';
@@ -108,11 +107,22 @@
                         this.op3 = doc.data().r3;
                         this.op4 = doc.data().r4;
                     } else {
-                        alert("Terminaste el juego, tu puntaje es: " + this.puntaje);
+                        this.number=1;
+
+                        firebase.firestore().collection("PreguntasEsdrújulas").doc("1").get().then(doc => {
+                            this.p = doc.data().p;
+                            this.op1 = doc.data().r1;
+                            this.op2 = doc.data().r2;
+                            this.op3 = doc.data().r3;
+                            this.op4 = doc.data().r4;
+                        });
                         this.componentKey += 1;
+                        this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
+                        this.puntaje=0;
                     }
 
                 });
+                this.mostrarToast("¡Muy bien, has sumado un punto!");
                 /* this.respuestas[this.conteo].juego = false;
                  if (this.respuestas[this.conteo + 1] != null) {
                      this.respuestas[this.conteo + 1].juego = true;
@@ -120,11 +130,19 @@
                      console.log('Ya acabaste esta, tu puntaje es de: ' + this.puntaje);
                  }*/
             },
+            mostrarToast: async function(mensaje){
+                const toast = await this.$ionic.toastController.create({
+                    message: mensaje,
+                    duration: 3000,
+                    position: "bottom"
+                });
+                await toast.present();
+            },
             perdio: function () {
                 if (this.puntaje > 0){
                     this.puntaje = this.puntaje - 1;
                 }else{
-                    alert("Terminaste el juego, tu puntaje es: " + this.puntaje);
+                    this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
                     this.number=1;
                     firebase.firestore().collection("PreguntasEsdrújulas").doc("1").get().then(doc => {
                         this.p = doc.data().p;
