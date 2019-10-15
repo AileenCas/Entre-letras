@@ -2,7 +2,7 @@
     <div id="app" :key="componentKey">
         <Toolbar/>
         <Menu/>
-        <h2>{{p}}</h2><br>
+        <P>{{p}}</P><br>
         <ion-list>
             <ion-radio-group>
                 <ion-radio type="text" style="display: none" id="posicion"></ion-radio>

@@ -1,29 +1,28 @@
+
 <template>
     <div id="app" :key="componentKey">
         <Toolbar/>
         <Menu/>
         <p>{{p}}</p><br>
-        <ion-list>
-            <ion-radio-group>
-                <ion-radio type="text" style="display: none" id="posicion"></ion-radio>
-                <ion-item>
-                    <ion-label for="1">{{op1}}</ion-label>
-                    <ion-radio id="1" type="radio" :value="op1" name="op"></ion-radio>
-                </ion-item>
-                <ion-item>
-                    <ion-label for="2">{{op2}}</ion-label>
-                    <ion-radio id="2" type="radio" :value="op2" name="op"></ion-radio>
-                </ion-item>
-                <ion-item>
-                    <ion-label for="3">{{op3}}</ion-label>
-                    <ion-radio id="3" type="radio" :value="op3" name="op"></ion-radio>
-                </ion-item>
-                <ion-item>
-                    <ion-label for="4">{{op4}}</ion-label>
-                    <ion-radio id="4" type="radio" :value="op4" name="op"></ion-radio>
-                </ion-item>
-            </ion-radio-group>
-        </ion-list>
+        <ion-radio-group>
+            <ion-radio type="text" style="display: none" id="posicion"></ion-radio>
+            <ion-button shape="round" expand="full" class="Juego">
+                <ion-label for="1">{{op1}}</ion-label>
+                <ion-radio id="1" type="radio" :value="op1" name="op"></ion-radio>
+            </ion-button>
+            <ion-button shape="round" expand="full" class="Juego">
+                <ion-label for="2">{{op2}}</ion-label>
+                <ion-radio id="2" type="radio" :value="op2" name="op"></ion-radio>
+            </ion-button>
+            <ion-button  shape="round" expand="full" class="Juego">
+                <ion-label for="3">{{op3}}</ion-label>
+                <ion-radio id="3" type="radio" :value="op3" name="op"></ion-radio>
+            </ion-button>
+            <ion-button shape="round" expand="full" class="Juego">
+                <ion-label for="4">{{op4}}</ion-label>
+                <ion-radio id="4" type="radio" :value="op4" name="op"></ion-radio>
+            </ion-button>
+        </ion-radio-group>
         <ion-button id="BtnR" class="btn btn-outline-success btn-block " @click="jugar()">¡Enviar!</ion-button>
         <hr>
         <span>Tu puntaje actual es de: {{puntaje}}</span>
@@ -35,7 +34,7 @@
     import Toolbar from './Toolbar'
     import Menu from './Menu'
     export default {
-        name: "Dia1",
+        name: "Hiato2",
         components:{
             Toolbar, Menu
         },
@@ -55,7 +54,7 @@
             }
         },
         mounted() {
-            firebase.firestore().collection("TildeDiacrítica").doc(this.number.toString(10)).get().then(doc => {
+            firebase.firestore().collection("Hiato2").doc(this.number.toString(10)).get().then(doc => {
                 this.p = doc.data().p;
                 this.op1 = doc.data().r1;
                 this.op2 = doc.data().r2;
@@ -71,7 +70,7 @@
                         this.rc = aux.value;
                     }
                 }
-                firebase.firestore().collection("TildeDiacrítica").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("Hiato2").doc(this.number.toString(10)).get().then(doc => {
                     if (doc.data().rc === this.rc) {
                         this.gano();
                         this.componentKey += 1;
@@ -99,7 +98,7 @@
                 this.op3 = '';
                 this.op4 = '';
                 this.p = '';
-                firebase.firestore().collection("TildeDiacrítica").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("Hiato2").doc(this.number.toString(10)).get().then(doc => {
                     if (typeof (doc.data()) !== "undefined") {
                         this.p = doc.data().p;
                         this.op1 = doc.data().r1;
@@ -109,7 +108,7 @@
                     } else {
                         this.number=1;
 
-                        firebase.firestore().collection("TildeDiacrítica").doc("1").get().then(doc => {
+                        firebase.firestore().collection("Hiato2").doc("1").get().then(doc => {
                             this.p = doc.data().p;
                             this.op1 = doc.data().r1;
                             this.op2 = doc.data().r2;
@@ -144,7 +143,7 @@
                 }else{
                     this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
                     this.number=1;
-                    firebase.firestore().collection("TildeDiacrítica").doc("1").get().then(doc => {
+                    firebase.firestore().collection("Hiato2").doc("1").get().then(doc => {
                         this.p = doc.data().p;
                         this.op1 = doc.data().r1;
                         this.op2 = doc.data().r2;

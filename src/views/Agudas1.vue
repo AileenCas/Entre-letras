@@ -2,7 +2,7 @@
     <div id="app" :key="componentKey">
         <Toolbar/>
         <Menu/>
-        <h2>{{p}}</h2><br>
+        <p>{{p}}</p><br>
         <ion-list>
             <ion-radio-group>
                 <ion-radio type="text" style="display: none" id="posicion"></ion-radio>
@@ -35,7 +35,7 @@
     import Toolbar from './Toolbar'
     import Menu from './Menu'
     export default {
-        name: "Aguda1",
+        name: "Agudas1",
         components:{
             Toolbar, Menu
         },

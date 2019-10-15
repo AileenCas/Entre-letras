@@ -155,3 +155,14 @@ h3{
 .re1{
     color: white;
 }
+.Juego {
+    --background: #D5EFF2;
+    color: black;
+}
+.Grid{
+    border: 2px solid #76ffff;
+    COLOR: WHITE;
+    FONT-SIZE: 18px;
+    display: flex;
+    flex-direction: column;
+}

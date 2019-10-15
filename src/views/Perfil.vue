@@ -4,7 +4,6 @@
         <Menu/>
         <img  class="icon" src="../assets/icon.png">
         <ion-input id="nombre">Usuario</ion-input>
-        <ion-input id="telefono"> Teléfono</ion-input>
         <ion-input id="email"> Correo electrónico</ion-input>
         <ion-button class="btn" @click="actualizar">Actualizar datos</ion-button>
     </ion-app>
@@ -20,7 +19,6 @@
         },
         mounted() {
             document.getElementById('nombre').value = firebase.auth().currentUser.displayName;
-            document.getElementById('telefono').value = firebase.auth().currentUser.phoneNumber;
             document.getElementById('email').value = firebase.auth().currentUser.email;
         },
         methods:{
