@@ -61,10 +61,10 @@
             }
         },
         methods: {
-            resentLoading() {
+            presentLoading(mensaje) {
                 return this.$ionic.loadingController
                     .create({
-                        message: 'Por favor, espere un momento...',
+                        message: mensaje,
                         duration: this.timeout,
                     })
                     .then(l => {
@@ -89,7 +89,7 @@
                                     nombre = document.getElementById('nombre').value;
                                 firebase.auth().signOut().then();
                                 firebase.auth().createUserWithEmailAndPassword(email, pass).then();
-                                this.resentLoading();
+                                this.resentLoading('Registrando su cuenta, por favor, espere un momento...');
                                 setTimeout(function () {
                                     firebase.auth().signInWithEmailAndPassword(email, pass).then();
                                     firebase.auth().currentUser.updateProfile({
@@ -118,9 +118,12 @@
                                 let nombre = document.getElementById('nombre').value,
                                     pass = document.getElementById('password').value;
                                 firebase.auth().signInWithEmailAndPassword(nombre, pass).then();
-                                this.$router.push({
-                                    name: 'TableroPrincipal'
-                                })
+                                this.presentLoading('Cargando, por favor espere un momento...');
+                                setTimeout(()=>{
+                                    this.$router.push({
+                                        name: 'TableroPrincipal'
+                                    })
+                                }, 3000)
                             },
                         },
                         'Cancelar']
