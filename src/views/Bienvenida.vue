@@ -46,7 +46,8 @@
         appId: "1:792002298661:web:09bb399b36b44990"
     };
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    let app = firebase.initializeApp(firebaseConfig);
+    let db = firebase.firestore(app);
 
     export default {
         props: {
@@ -89,7 +90,12 @@
                                     nombre = document.getElementById('nombre').value;
                                 firebase.auth().signOut().then();
                                 firebase.auth().createUserWithEmailAndPassword(email, pass).then();
-                                this.resentLoading('Registrando su cuenta, por favor, espere un momento...');
+                                this.presentLoading('Registrando su cuenta, por favor, espere un momento...');
+                                db.collection('usuarios').doc(email).set({
+                                    nombre: nombre,
+                                    exp: 0,
+                                    nivel: 1
+                                });
                                 setTimeout(function () {
                                     firebase.auth().signInWithEmailAndPassword(email, pass).then();
                                     firebase.auth().currentUser.updateProfile({
