@@ -2,7 +2,7 @@
     <div id="app" :key="componentKey">
         <Toolbar/>
         <Menu/>
-        <h2>{{p}}</h2><br>
+        <p>{{p}}</p><br>
         <ion-list>
             <ion-radio-group>
                 <ion-radio type="text" style="display: none" id="posicion"></ion-radio>
@@ -110,7 +110,6 @@
                         this.op4 = doc.data().r4;
                     } else {
                         this.number = 1;
-
                         firebase.firestore().collection("UsodelaComa").doc("1").get().then(doc => {
                             this.p = doc.data().p;
                             this.op1 = doc.data().r1;
@@ -142,9 +141,9 @@
             perdio: function () {
                 if (this.puntaje > 0) {
                     this.puntaje = this.puntaje - 1;
-                } else {
+                }else{
                     this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
-                    this.number = 1;
+                    this.number=1;
                     firebase.firestore().collection("UsodelaComa").doc("1").get().then(doc => {
                         this.p = doc.data().p;
                         this.op1 = doc.data().r1;

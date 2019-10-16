@@ -17,6 +17,11 @@
                 <ion-card-title>¡Conoce tus resultados!</ion-card-title>
             </ion-card-header>
         </ion-card>
+        <ion-card color="primary" button="true" class="cards" @click="irA('Tips')">
+            <ion-card-header>
+                <ion-card-title>Curiosidades</ion-card-title>
+            </ion-card-header>
+        </ion-card>
     </div>
 </template>
 

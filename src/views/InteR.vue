@@ -5,7 +5,7 @@
         <img  CLASS="icon" src="../assets/lupito-t.png" >
         <ion-button expand="full"   class="btnD" @click="Horro()">¡Alto Ahí!</ion-button>
         <ion-card button="true" class="card" @click="irA('Inte1')"><h2>¡Escoge!</h2></ion-card>
-        <ion-card button="true" class="card" @click="irA('Inte2')"><h2>¡Arrastra!</h2></ion-card>
+        <ion-card button="true" class="card" @click="irA('Inte2')"><h2>¡Selecciona!</h2></ion-card>
     </div>
 </template>
 

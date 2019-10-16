@@ -145,7 +145,24 @@ h3{
     color: #212121;
     background: #dd6500;
 }
-.div1{
+.re{
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.re1{
+    color: white;
+}
+.Juego {
+    --background: #D5EFF2;
+    color: black;
+}
+.Grid{
+    border: 2px solid #76ffff;
+    COLOR: WHITE;
+    FONT-SIZE: 18px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
 }
