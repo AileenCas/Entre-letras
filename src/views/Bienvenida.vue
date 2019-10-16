@@ -35,20 +35,6 @@
 <script>
     import firebase from 'firebase'
     import router from '../router'
-
-    var firebaseConfig = {
-        apiKey: "AIzaSyB0hnZuDfSfpxPj86H-drZRSCBz-bm0oAQ",
-        authDomain: "entreletras-841ff.firebaseapp.com",
-        databaseURL: "https://entreletras-841ff.firebaseio.com",
-        projectId: "entreletras-841ff",
-        storageBucket: "entreletras-841ff.appspot.com",
-        messagingSenderId: "792002298661",
-        appId: "1:792002298661:web:09bb399b36b44990"
-    };
-    // Initialize Firebase
-    let app = firebase.initializeApp(firebaseConfig);
-    let db = firebase.firestore(app);
-
     export default {
         props: {
             timeout: {type: Number, default: 5000},
@@ -60,6 +46,9 @@
                     speed: 1000
                 }
             }
+        },
+        mounted(){
+            console.log(this.$db)
         },
         methods: {
             presentLoading(mensaje) {
@@ -91,11 +80,12 @@
                                 firebase.auth().signOut().then();
                                 firebase.auth().createUserWithEmailAndPassword(email, pass).then();
                                 this.presentLoading('Registrando su cuenta, por favor, espere un momento...');
-                                db.collection('usuarios').doc(email).set({
+
+                                /*db.collection('usuarios').doc(email).set({
                                     nombre: nombre,
                                     exp: 0,
                                     nivel: 1
-                                });
+                                });*/
                                 setTimeout(function () {
                                     firebase.auth().signInWithEmailAndPassword(email, pass).then();
                                     firebase.auth().currentUser.updateProfile({
