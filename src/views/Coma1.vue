@@ -34,9 +34,10 @@
     import firebase from 'firebase'
     import Toolbar from './Toolbar'
     import Menu from './Menu'
+
     export default {
         name: "Coma1",
-        components:{
+        components: {
             Toolbar, Menu
         },
         data() {
@@ -61,6 +62,7 @@
                 this.op2 = doc.data().r2;
                 this.op3 = doc.data().r3;
                 this.op4 = doc.data().r4;
+
             });
         },
         methods: {
@@ -107,8 +109,7 @@
                         this.op3 = doc.data().r3;
                         this.op4 = doc.data().r4;
                     } else {
-                        this.number=1;
-
+                        this.number = 1;
                         firebase.firestore().collection("UsodelaComa").doc("1").get().then(doc => {
                             this.p = doc.data().p;
                             this.op1 = doc.data().r1;
@@ -118,9 +119,8 @@
                         });
                         this.componentKey += 1;
                         this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
-                        this.puntaje=0;
+                        this.puntaje = 0;
                     }
-
                 });
                 this.mostrarToast("¡Muy bien, has sumado un punto!");
                 /* this.respuestas[this.conteo].juego = false;
@@ -130,7 +130,7 @@
                      console.log('Ya acabaste esta, tu puntaje es de: ' + this.puntaje);
                  }*/
             },
-            mostrarToast: async function(mensaje){
+            mostrarToast: async function (mensaje) {
                 const toast = await this.$ionic.toastController.create({
                     message: mensaje,
                     duration: 3000,
@@ -139,7 +139,7 @@
                 await toast.present();
             },
             perdio: function () {
-                if (this.puntaje > 0){
+                if (this.puntaje > 0) {
                     this.puntaje = this.puntaje - 1;
                 }else{
                     this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
