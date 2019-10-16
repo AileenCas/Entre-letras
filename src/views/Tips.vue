@@ -67,6 +67,19 @@
             <br>
             <img src="../assets/Tip16.png">
         </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip17.png">
+            <br>
+            <img src="../assets/Tip18.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip19.png">
+            <br>
+            <img src="../assets/Tip20.png">
+        </ion-slide>
+
     </ion-slides>
     </div>
 </template>
