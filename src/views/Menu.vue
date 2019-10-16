@@ -11,6 +11,7 @@
                     <ion-item button="true" @click="Inicio()"><ion-icon name="home"></ion-icon> <ion-label>Inicio</ion-label></ion-item>
                     <ion-item button="true" @click="Perfil()"><ion-icon name="person"></ion-icon> <ion-label>¡Ve a tu perfil!</ion-label></ion-item>
                     <ion-item button="true" @click="Comparte()"><ion-icon name="people"></ion-icon> <ion-label>¡Comparte con tus amigos!</ion-label></ion-item>
+                    <ion-item button="true" @click="cerrarSesion()"><ion-icon name="log-out"></ion-icon> <ion-label>Cerrar sesión</ion-label></ion-item>
                 </ion-list>
             </ion-content>
         </ion-menu>
@@ -18,9 +19,26 @@
     </ion-app>
 </template>
 <script>
+    import firebase from 'firebase'
     export default {
         name: 'Menu',
+        props: {
+            timeout: {type: Number, default: 2000},
+        },
         methods: {
+            presentLoading(mensaje) {
+                return this.$ionic.loadingController
+                    .create({
+                        message: mensaje,
+                        duration: this.timeout,
+                    })
+                    .then(l => {
+                        setTimeout(function () {
+                            l.dismiss()
+                        }, this.timeout);
+                        return l.present()
+                    })
+            },
             Inicio: function () {
                 this.$router.push({name: 'TableroPrincipal'})
             },
@@ -34,8 +52,12 @@
                     buttons: ['Salir','Gmail'],
                 }).then(a => a.present())
             },
-            Ayuda: function () {
-                return this.$ionic.push({name:'Ayuda'})
+            cerrarSesion: function () {
+                firebase.auth().signOut();
+                this.presentLoading('Cerrando sesión...');
+                setTimeout(() => {
+                    this.$router.push({path: '/'})
+                }, 2000)
             },
         },
     }
