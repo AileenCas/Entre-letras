@@ -6,6 +6,7 @@
         <h1>Palabras agudas </h1>
             <p>Las palabras agudas son las que llevan acento en la última sílaba. </p>
                 <p>Las palabras agudas llevan tilde si terminan en vocal: </p>
+
           <ion-slides pager="true" :options="slideOpts">
             <ion-slide>
                  <img  class="imgA" src="../assets/aguda2.png">
