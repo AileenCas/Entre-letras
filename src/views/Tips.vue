@@ -37,6 +37,36 @@
             <br>
             <img src="../assets/Tip6.png">
         </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip7.png">
+            <br>
+            <img src="../assets/Tip8.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip9.png">
+            <br>
+            <img src="../assets/Tip10.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip11.png">
+            <br>
+            <img src="../assets/Tip12.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip13.png">
+            <br>
+            <img src="../assets/Tip14.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip15.png">
+            <br>
+            <img src="../assets/Tip16.png">
+        </ion-slide>
     </ion-slides>
     </div>
 </template>
@@ -44,10 +74,9 @@
 <script>
     import Toolbar from "./Toolbar";
     import Menu from "./Menu";
-    import Sobre from "./Sobre";
     export default {
         name: "Tips",
-        components: {Sobre, Toolbar, Menu},
+        components: { Toolbar, Menu},
         data: () => {
             return {
                 slideOpts: {
