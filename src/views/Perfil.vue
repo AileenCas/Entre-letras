@@ -5,16 +5,15 @@
         <img class="icon" src="../assets/icon.png">
         <ion-input id="nombre">Usuario: </ion-input>
         <ion-input id="email"> Correo electrónico: </ion-input>
-        <ion-input id="nivel"> Nivel: </ion-input>
+        <ion-input id="nivel" readonly> Nivel: </ion-input>
         <ion-button class="btn" @click="actualizar">Actualizar datos</ion-button>
     </ion-app>
 </template>
 <script>
     import Toolbar from './Toolbar'
     import Menu from './Menu'
-    import firebase from 'firebase'
-
-
+    import firebase from '../libFirebase'
+    import db from "../libFirestore"
     export default {
         name: "Perfil",
         components: {

@@ -33,8 +33,10 @@
     </ion-app>
 </template>
 <script>
-    import firebase from 'firebase'
+    import firebase from "../libFirebase";
+    import libFirestore from "../libFirestore"
     import router from '../router'
+
     export default {
         props: {
             timeout: {type: Number, default: 5000},
@@ -48,7 +50,7 @@
             }
         },
         mounted(){
-            console.log(this.$db)
+
         },
         methods: {
             presentLoading(mensaje) {
@@ -68,7 +70,7 @@
                 return this.$ionic.alertController.create({
                     header: 'Regístrate',
                     inputs: [{type: "text", id: 'nombre', placeholder: "Ingresa tu nombre"},
-                        {type: "text", placeholder: "Correo electrónico", id: 'email'},
+                          {type: "text", placeholder: "Correo electrónico", id: 'email'},
                         {type: "password", placeholder: "Ingresa tu contraseña", id: 'pass'}],
                     buttons: [
                         {
@@ -80,12 +82,11 @@
                                 firebase.auth().signOut().then();
                                 firebase.auth().createUserWithEmailAndPassword(email, pass).then();
                                 this.presentLoading('Registrando su cuenta, por favor, espere un momento...');
-
-                                /*db.collection('usuarios').doc(email).set({
+                                libFirestore.collection('usuarios').doc(email).set({
                                     nombre: nombre,
                                     exp: 0,
                                     nivel: 1
-                                });*/
+                                });
                                 setTimeout(function () {
                                     firebase.auth().signInWithEmailAndPassword(email, pass).then();
                                     firebase.auth().currentUser.updateProfile({
