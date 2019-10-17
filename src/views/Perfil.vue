@@ -6,6 +6,7 @@
         <ion-input id="nombre">Usuario: </ion-input>
         <ion-input id="email"> Correo electrónico: </ion-input>
         <ion-input id="nivel" readonly> Nivel: </ion-input>
+        <ion-input id="exp" readonly> Experiencia: </ion-input>
         <ion-button class="btn" @click="actualizar">Actualizar datos</ion-button>
     </ion-app>
 </template>
@@ -22,8 +23,10 @@
         mounted() {
             document.getElementById('nombre').value = firebase.auth().currentUser.displayName;
             document.getElementById('email').value = firebase.auth().currentUser.email;
-            document.getElementById('nivel').value = db.collection('usuarios').doc(firebase.auth().currentUser.email).get().then(doc => {
-                return doc.nivel
+            db.collection('usuarios').doc(firebase.auth().currentUser.email).get().then(doc=>{
+                document.getElementById('nivel').value = doc.data().nivel;
+                document.getElementById('exp').value = doc.data().exp + ' XP'
+
             });
         },
         methods: {
