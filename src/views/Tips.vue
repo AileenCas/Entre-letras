@@ -79,6 +79,60 @@
             <br>
             <img src="../assets/Tip20.png">
         </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+        <img src="../assets/Tip21.png">
+        <br>
+        <img src="../assets/Tip22.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+        <img src="../assets/Tip23.png">
+        <br>
+        <img src="../assets/Tip24.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip25.png">
+            <br>
+            <img src="../assets/Tip26.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip27.png">
+            <br>
+            <img src="../assets/Tip28.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip29.png">
+            <br>
+            <img src="../assets/Tip30.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip31.png">
+            <br>
+            <img src="../assets/Tip32.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip33.png">
+            <br>
+            <img src="../assets/Tip34.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip35.png">
+            <br>
+            <img src="../assets/Tip36.png">
+        </ion-slide>
+        <ion-slide class="slide1">
+            <h2>¿Sorpréndente?</h2>
+            <img src="../assets/Tip37.png">
+            <br>
+            <img src="../assets/Tip38.png">
+        </ion-slide>
 
     </ion-slides>
     </div>
@@ -102,5 +156,6 @@
 </script>
 
 <style scoped>
+
 
 </style>
