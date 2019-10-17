@@ -33,20 +33,9 @@
     </ion-app>
 </template>
 <script>
-    import firebase from 'firebase'
+    import firebase from "../libFirebase";
+    import libFirestore from "../libFirestore"
     import router from '../router'
-
-    var firebaseConfig = {
-        apiKey: "AIzaSyB0hnZuDfSfpxPj86H-drZRSCBz-bm0oAQ",
-        authDomain: "entreletras-841ff.firebaseapp.com",
-        databaseURL: "https://entreletras-841ff.firebaseio.com",
-        projectId: "entreletras-841ff",
-        storageBucket: "entreletras-841ff.appspot.com",
-        messagingSenderId: "792002298661",
-        appId: "1:792002298661:web:09bb399b36b44990"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
 
     export default {
         props: {
@@ -59,6 +48,9 @@
                     speed: 1000
                 }
             }
+        },
+        mounted(){
+
         },
         methods: {
             presentLoading(mensaje) {
@@ -78,7 +70,7 @@
                 return this.$ionic.alertController.create({
                     header: 'Regístrate',
                     inputs: [{type: "text", id: 'nombre', placeholder: "Ingresa tu nombre"},
-                        {type: "text", placeholder: "Correo electrónico", id: 'email'},
+                          {type: "text", placeholder: "Correo electrónico", id: 'email'},
                         {type: "password", placeholder: "Ingresa tu contraseña", id: 'pass'}],
                     buttons: [
                         {
@@ -89,7 +81,12 @@
                                     nombre = document.getElementById('nombre').value;
                                 firebase.auth().signOut().then();
                                 firebase.auth().createUserWithEmailAndPassword(email, pass).then();
-                                this.resentLoading('Registrando su cuenta, por favor, espere un momento...');
+                                this.presentLoading('Registrando su cuenta, por favor, espere un momento...');
+                                libFirestore.collection('usuarios').doc(email).set({
+                                    nombre: nombre,
+                                    exp: 0,
+                                    nivel: 1
+                                });
                                 setTimeout(function () {
                                     firebase.auth().signInWithEmailAndPassword(email, pass).then();
                                     firebase.auth().currentUser.updateProfile({
