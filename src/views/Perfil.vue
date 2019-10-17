@@ -3,10 +3,10 @@
         <Toolbar/>
         <Menu/>
         <img class="icon" src="../assets/icon.png">
-        <ion-input id="nombre">Usuario: </ion-input>
-        <ion-input id="email"> Correo electrónico: </ion-input>
-        <ion-input id="nivel" readonly> Nivel: </ion-input>
-        <ion-input id="exp" readonly> Experiencia: </ion-input>
+        <ion-input id="nombre"><ion-icon name="contact"></ion-icon> Usuario: </ion-input>
+        <ion-input id="email"><ion-icon name="mail"></ion-icon> Correo electrónico: </ion-input>
+        <ion-input id="nivel" readonly><ion-icon name="trophy"></ion-icon> Nivel: </ion-input>
+        <ion-input id="exp" readonly><ion-icon name="logo-game-controller-b"></ion-icon> Experiencia: </ion-input>
         <ion-button class="btn" @click="actualizar">Actualizar datos</ion-button>
     </ion-app>
 </template>
