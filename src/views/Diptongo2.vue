@@ -5,22 +5,24 @@
         <p>{{p}}</p><br>
         <ion-radio-group>
             <ion-radio type="text" style="display: none" id="posicion"></ion-radio>
-            <ion-button shape="round" expand="full" class="Juego">
-                <ion-label for="1">{{op1}}</ion-label>
-                <ion-radio id="1" type="radio" :value="op1" name="op"></ion-radio>
-            </ion-button>
-            <ion-button shape="round" expand="full" class="Juego">
-                <ion-label for="2">{{op2}}</ion-label>
-                <ion-radio id="2" type="radio" :value="op2" name="op"></ion-radio>
-            </ion-button>
-            <ion-button  shape="round" expand="full" class="Juego">
-                <ion-label for="3">{{op3}}</ion-label>
-                <ion-radio id="3" type="radio" :value="op3" name="op"></ion-radio>
-            </ion-button>
-            <ion-button shape="round" expand="full" class="Juego">
-                <ion-label for="4">{{op4}}</ion-label>
-                <ion-radio id="4" type="radio" :value="op4" name="op"></ion-radio>
-            </ion-button>
+            <ion-list>
+                <ion-item>
+                    <ion-radio id="1" type="radio" :value="op1" name="op"></ion-radio>
+                    <ion-label for="1">{{op1}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-radio id="2" type="radio" :value="op2" name="op"></ion-radio>
+                    <ion-label for="2">{{op2}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-radio id="3" type="radio" :value="op3" name="op"></ion-radio>
+                    <ion-label for="3">{{op3}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-radio id="4" type="radio" :value="op4" name="op"></ion-radio>
+                    <ion-label for="4">{{op4}}</ion-label>
+                </ion-item>
+            </ion-list>
         </ion-radio-group>
         <ion-button id="BtnR" class="btn btn-outline-success btn-block " @click="jugar()">¡Enviar!</ion-button>
         <hr>
@@ -53,7 +55,7 @@
             }
         },
         mounted() {
-            firebase.firestore().collection("Diptongo2").doc(this.number.toString(10)).get().then(doc => {
+            firebase.firestore().collection("Diptongo 2").doc(this.number.toString(10)).get().then(doc => {
                 this.p = doc.data().P;
                 this.op1 = doc.data().R1;
                 this.op2 = doc.data().R2;
@@ -69,7 +71,7 @@
                         this.rc = aux.value;
                     }
                 }
-                firebase.firestore().collection("Diptongo2").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("Diptongo 2").doc(this.number.toString(10)).get().then(doc => {
                     if (doc.data().Rc === this.rc) {
                         this.gano();
                         this.componentKey += 1;
@@ -97,7 +99,7 @@
                 this.op3 = '';
                 this.op4 = '';
                 this.p = '';
-                firebase.firestore().collection("Diptongo2").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("Diptongo 2").doc(this.number.toString(10)).get().then(doc => {
                     if (typeof (doc.data()) !== "undefined") {
                         this.p = doc.data().P;
                         this.op1 = doc.data().R1;
@@ -142,7 +144,7 @@
                 }else{
                     this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
                     this.number=1;
-                    firebase.firestore().collection("Diptongo2").doc("1").get().then(doc => {
+                    firebase.firestore().collection("Diptongo 2").doc("1").get().then(doc => {
                         this.p = doc.data().P;
                         this.op1 = doc.data().R1;
                         this.op2 = doc.data().R2;

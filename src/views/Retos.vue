@@ -2,6 +2,7 @@
     <div id="app">
         <Menu/>
         <Toolbar/>
+        <ion-list>
             <ion-card button="true" class="cards" @click="irA('AgudasR')">
                 <img class="imgtemas" src="../assets/agudas.png">
             </ion-card>
@@ -88,6 +89,7 @@
                     <img class="imgtemas" src="../assets/inte.png">
                 </ion-card-header>
             </ion-card>
+        </ion-list>
         </div>
 </template>
 <script>

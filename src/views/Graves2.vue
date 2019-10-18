@@ -107,7 +107,6 @@
                         this.op4 = doc.data().R4;
                     } else {
                         this.number=1;
-
                         firebase.firestore().collection("Graves 2").doc("1").get().then(doc => {
                             this.p = doc.data().P;
                             this.op1 = doc.data().R1;
