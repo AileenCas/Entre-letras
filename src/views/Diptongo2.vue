@@ -5,17 +5,23 @@
         <p>{{p}}</p><br>
         <ion-radio-group>
             <ion-radio type="text" style="display: none" id="posicion"></ion-radio>
-            <ion-button shape="round" expand="full" class="Juego">
-                <ion-label for="1">{{op1}}</ion-label>
-                <ion-radio id="1" type="radio" :value="op1" name="op"></ion-radio>
-            </ion-button>
-            <ion-button shape="round" expand="full" class="Juego">
-                <ion-label for="2">{{op2}}</ion-label>
-                <ion-radio id="2" type="radio" :value="op2" name="op"></ion-radio>
-            </ion-button>
+            <ion-list>
+                <ion-item>
+                    <ion-radio id="1" type="radio" :value="op1" name="op"></ion-radio>
+                    <ion-label for="1">{{op1}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-radio id="2" type="radio" :value="op2" name="op"></ion-radio>
+                    <ion-label for="2">{{op2}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-radio id="3" type="radio" :value="op3" name="op"></ion-radio>
+                    <ion-label for="3">{{op3}}</ion-label>
+                </ion-item>
+            </ion-list>
             <ion-button  shape="round" expand="full" class="Juego">
-                <ion-label for="3">{{op3}}</ion-label>
-                <ion-radio id="3" type="radio" :value="op3" name="op"></ion-radio>
+
+
             </ion-button>
             <ion-button shape="round" expand="full" class="Juego">
                 <ion-label for="4">{{op4}}</ion-label>
