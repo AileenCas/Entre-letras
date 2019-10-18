@@ -18,15 +18,11 @@
                     <ion-radio id="3" type="radio" :value="op3" name="op"></ion-radio>
                     <ion-label for="3">{{op3}}</ion-label>
                 </ion-item>
+                <ion-item>
+                    <ion-radio id="4" type="radio" :value="op4" name="op"></ion-radio>
+                    <ion-label for="4">{{op4}}</ion-label>
+                </ion-item>
             </ion-list>
-            <ion-button  shape="round" expand="full" class="Juego">
-
-
-            </ion-button>
-            <ion-button shape="round" expand="full" class="Juego">
-                <ion-label for="4">{{op4}}</ion-label>
-                <ion-radio id="4" type="radio" :value="op4" name="op"></ion-radio>
-            </ion-button>
         </ion-radio-group>
         <ion-button id="BtnR" class="btn btn-outline-success btn-block " @click="jugar()">¡Enviar!</ion-button>
         <hr>
