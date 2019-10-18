@@ -54,14 +54,13 @@
 
 
 <script>
+
     export default {
         name: "Agudas",
         methods:{
             atras1: function () {
                 this.$router.push({name: 'Temas'})
             },
-
-
         },
     }
 </script>
