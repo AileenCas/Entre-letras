@@ -69,7 +69,7 @@
                         this.rc = aux.value;
                     }
                 }
-                firebase.firestore().collection("UsodelPunto2").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("UsoDelPunto2").doc(this.number.toString(10)).get().then(doc => {
                     if (doc.data().rc === this.rc) {
                         this.gano();
                         this.componentKey += 1;
@@ -97,7 +97,7 @@
                 this.op3 = '';
                 this.op4 = '';
                 this.p = '';
-                firebase.firestore().collection("UsodelPunto2").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("UsoDelPunto2").doc(this.number.toString(10)).get().then(doc => {
                     if (typeof (doc.data()) !== "undefined") {
                         this.p = doc.data().p;
                         this.op1 = doc.data().r1;
@@ -107,7 +107,7 @@
                     } else {
                         this.number=1;
 
-                        firebase.firestore().collection("UsodelPunto2").doc("1").get().then(doc => {
+                        firebase.firestore().collection("UsoDelPunto2").doc("1").get().then(doc => {
                             this.p = doc.data().p;
                             this.op1 = doc.data().r1;
                             this.op2 = doc.data().r2;
