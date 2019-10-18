@@ -53,7 +53,7 @@
             }
         },
         mounted() {
-            firebase.firestore().collection("UsodelPunto2").doc(this.number.toString(10)).get().then(doc => {
+            firebase.firestore().collection("UsoDelPunto2").doc(this.number.toString(10)).get().then(doc => {
                 this.p = doc.data().p;
                 this.op1 = doc.data().r1;
                 this.op2 = doc.data().r2;
@@ -142,7 +142,7 @@
                 }else{
                     this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
                     this.number=1;
-                    firebase.firestore().collection("UsodelPunto2").doc("1").get().then(doc => {
+                    firebase.firestore().collection("UsoDelPunto2").doc("1").get().then(doc => {
                         this.p = doc.data().p;
                         this.op1 = doc.data().r1;
                         this.op2 = doc.data().r2;
