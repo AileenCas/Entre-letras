@@ -107,7 +107,7 @@
                     } else {
                         this.number=1;
 
-                        firebase.firestore().collection("Diptongo2").doc("1").get().then(doc => {
+                        firebase.firestore().collection("Diptongo 2").doc("1").get().then(doc => {
                             this.p = doc.data().P;
                             this.op1 = doc.data().R1;
                             this.op2 = doc.data().R2;

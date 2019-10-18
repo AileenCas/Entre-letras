@@ -55,7 +55,7 @@
             }
         },
         mounted() {
-            firebase.firestore().collection("UsodelaTilde").doc(this.number.toString(10)).get().then(doc => {
+            firebase.firestore().collection("UsoDeLaTilde").doc(this.number.toString(10)).get().then(doc => {
                 this.p = doc.data().p;
                 this.op1 = doc.data().r1;
                 this.op2 = doc.data().r2;
@@ -71,7 +71,7 @@
                         this.rc = aux.value;
                     }
                 }
-                firebase.firestore().collection("UsodelaTilde").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("UsoDeLaTilde").doc(this.number.toString(10)).get().then(doc => {
                     if (doc.data().rc === this.rc) {
                         this.gano();
                         this.componentKey += 1;
@@ -99,7 +99,7 @@
                 this.op3 = '';
                 this.op4 = '';
                 this.p = '';
-                firebase.firestore().collection("UsodelaTilde").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("UsoDeLaTilde").doc(this.number.toString(10)).get().then(doc => {
                     if (typeof (doc.data()) !== "undefined") {
                         this.p = doc.data().p;
                         this.op1 = doc.data().r1;
@@ -109,7 +109,7 @@
                     } else {
                         this.number=1;
 
-                        firebase.firestore().collection("UsodelaTilde").doc("1").get().then(doc => {
+                        firebase.firestore().collection("UsoDeLaTilde").doc("1").get().then(doc => {
                             this.p = doc.data().p;
                             this.op1 = doc.data().r1;
                             this.op2 = doc.data().r2;
@@ -144,7 +144,7 @@
                 }else{
                     this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
                     this.number=1;
-                    firebase.firestore().collection("UsodelaTilde").doc("1").get().then(doc => {
+                    firebase.firestore().collection("UsoDeLaTilde").doc("1").get().then(doc => {
                         this.p = doc.data().p;
                         this.op1 = doc.data().r1;
                         this.op2 = doc.data().r2;

@@ -53,12 +53,12 @@
             }
         },
         mounted() {
-            firebase.firestore().collection("SignosdeInterrogación2").doc(this.number.toString(10)).get().then(doc => {
-                this.p = doc.data().p;
-                this.op1 = doc.data().r1;
-                this.op2 = doc.data().r2;
-                this.op3 = doc.data().r3;
-                this.op4 = doc.data().r4;
+            firebase.firestore().collection("Signos de interrogación 2").doc(this.number.toString(10)).get().then(doc => {
+                this.p = doc.data().P;
+                this.op1 = doc.data().R1;
+                this.op2 = doc.data().R2;
+                this.op3 = doc.data().R3;
+                this.op4 = doc.data().R4;
             });
         },
         methods: {
@@ -69,7 +69,7 @@
                         this.rc = aux.value;
                     }
                 }
-                firebase.firestore().collection("SignosdeInterrogación2").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("Signos de interrogación 2").doc(this.number.toString(10)).get().then(doc => {
                     if (doc.data().rc === this.rc) {
                         this.gano();
                         this.componentKey += 1;
@@ -97,22 +97,22 @@
                 this.op3 = '';
                 this.op4 = '';
                 this.p = '';
-                firebase.firestore().collection("SignosdeInterrogación2").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("Signos de interrogación 2").doc(this.number.toString(10)).get().then(doc => {
                     if (typeof (doc.data()) !== "undefined") {
-                        this.p = doc.data().p;
-                        this.op1 = doc.data().r1;
-                        this.op2 = doc.data().r2;
-                        this.op3 = doc.data().r3;
-                        this.op4 = doc.data().r4;
+                        this.p = doc.data().P;
+                        this.op1 = doc.data().R1;
+                        this.op2 = doc.data().R2;
+                        this.op3 = doc.data().R3;
+                        this.op4 = doc.data().R4;
                     } else {
                         this.number=1;
 
-                        firebase.firestore().collection("SignosdeInterrogación2").doc("1").get().then(doc => {
-                            this.p = doc.data().p;
-                            this.op1 = doc.data().r1;
-                            this.op2 = doc.data().r2;
-                            this.op3 = doc.data().r3;
-                            this.op4 = doc.data().r4;
+                        firebase.firestore().collection("Signos de interrogación 2").doc("1").get().then(doc => {
+                            this.p = doc.data().P;
+                            this.op1 = doc.data().R1;
+                            this.op2 = doc.data().R2;
+                            this.op3 = doc.data().R3;
+                            this.op4 = doc.data().R4;
                         });
                         this.componentKey += 1;
                         this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
@@ -142,12 +142,12 @@
                 }else{
                     this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
                     this.number=1;
-                    firebase.firestore().collection("SignosdeInterrogación2").doc("1").get().then(doc => {
+                    firebase.firestore().collection("Signos de interrogación 2").doc("1").get().then(doc => {
                         this.p = doc.data().p;
-                        this.op1 = doc.data().r1;
-                        this.op2 = doc.data().r2;
-                        this.op3 = doc.data().r3;
-                        this.op4 = doc.data().r4;
+                        this.op1 = doc.data().R1;
+                        this.op2 = doc.data().R2;
+                        this.op3 = doc.data().R3;
+                        this.op4 = doc.data().R4;
                     });
                     this.componentKey += 1
                 }
