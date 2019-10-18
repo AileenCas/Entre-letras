@@ -34,10 +34,10 @@
     import firebase from 'firebase'
     import Toolbar from './Toolbar'
     import Menu from './Menu'
-
+    import calculo from "../calculoPuntoEXP"
     export default {
         name: "Coma1",
-        components: {
+        components:{
             Toolbar, Menu
         },
         data() {
@@ -53,6 +53,8 @@
                 formAgregar: false,
                 puntaje: 0,
                 conteo: 0,
+                exp: 0,
+                nivel:0
             }
         },
         mounted() {
@@ -62,8 +64,11 @@
                 this.op2 = doc.data().r2;
                 this.op3 = doc.data().r3;
                 this.op4 = doc.data().r4;
-
             });
+            firebase.firestore().collection("usuarios").doc(firebase.auth().currentUser.email).get().then(doc =>{
+                this.exp = doc.data().exp;
+                this.nivel = doc.data().nivel
+            })
         },
         methods: {
             jugar: function () {
@@ -76,11 +81,13 @@
                 firebase.firestore().collection("UsodelaComa").doc(this.number.toString(10)).get().then(doc => {
                     if (doc.data().rc === this.rc) {
                         this.gano();
+                        this.mostrarToast("¡Muy bien, has sumado un punto!");
+                        this.puntaje++;
                         this.componentKey += 1;
                         //this.$forceUpdate();
-                    } else {
-                        this.mostrarToast("Fallaste :( ¡Intentalo de nuevo! Se te restará un punto.");
-                        this.perdio();
+                    }else{
+                        this.gano();
+                        this.mostrarToast("Fallaste, sigue intentando :(");
                     }
                 });
             },
@@ -95,7 +102,6 @@
             },
             gano: function () {
                 this.number++;
-                this.puntaje++;
                 this.op1 = '';
                 this.op2 = '';
                 this.op3 = '';
@@ -109,7 +115,7 @@
                         this.op3 = doc.data().r3;
                         this.op4 = doc.data().r4;
                     } else {
-                        this.number = 1;
+                        this.number=1;
                         firebase.firestore().collection("UsodelaComa").doc("1").get().then(doc => {
                             this.p = doc.data().p;
                             this.op1 = doc.data().r1;
@@ -117,12 +123,17 @@
                             this.op3 = doc.data().r3;
                             this.op4 = doc.data().r4;
                         });
+                        calculo(this.puntaje, firebase.auth().currentUser.email, this.exp,this.nivel);
+                        firebase.firestore().collection("usuarios").doc(firebase.auth().currentUser.email).get().then(doc =>{
+                            this.exp = doc.data().exp;
+                            this.nivel = doc.data().nivel
+                        });
                         this.componentKey += 1;
                         this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
-                        this.puntaje = 0;
+                        this.puntaje=0;
                     }
+
                 });
-                this.mostrarToast("¡Muy bien, has sumado un punto!");
                 /* this.respuestas[this.conteo].juego = false;
                  if (this.respuestas[this.conteo + 1] != null) {
                      this.respuestas[this.conteo + 1].juego = true;
@@ -130,30 +141,13 @@
                      console.log('Ya acabaste esta, tu puntaje es de: ' + this.puntaje);
                  }*/
             },
-            mostrarToast: async function (mensaje) {
+            mostrarToast: async function(mensaje){
                 const toast = await this.$ionic.toastController.create({
                     message: mensaje,
                     duration: 3000,
                     position: "bottom"
                 });
                 await toast.present();
-            },
-            perdio: function () {
-                if (this.puntaje > 0) {
-                    this.puntaje = this.puntaje - 1;
-                }else{
-                    this.mostrarToast("Terminaste el juego, tu puntaje fue de: " + this.puntaje);
-                    this.number=1;
-                    firebase.firestore().collection("UsodelaComa").doc("1").get().then(doc => {
-                        this.p = doc.data().p;
-                        this.op1 = doc.data().r1;
-                        this.op2 = doc.data().r2;
-                        this.op3 = doc.data().r3;
-                        this.op4 = doc.data().r4;
-                    });
-                    this.componentKey += 1
-                }
-
             },
             agregar: function () {
                 this.respuestas.push({
