@@ -6,7 +6,7 @@
         <ion-slide>
             <ion-card>
                 <h2 class="Item" >¡Hola de nuevo!</h2>
-                <p class="Item">Espero que te estés divirtiendo en éste mágico mundo de la ortografía.</p>
+                <p class="Item">Espero que te estés divirtiendo en este mágico mundo de la ortografía.</p>
                 <img  class="icon" src="../assets/icon.png">
                 <ion-card-header>
                     <ion-grid class="Grid" size="8">
