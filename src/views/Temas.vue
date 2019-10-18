@@ -164,9 +164,6 @@
                 })
             },
 
-        },
-        mounted() {
-            document.body.style.background = "#0d47a1";
         }
     }
 </script>
