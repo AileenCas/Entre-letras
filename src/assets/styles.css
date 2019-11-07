@@ -187,3 +187,16 @@ h5{
     position: relative;
     text-align: center;
 }
+.re1{
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: center;
+}
+.i{
+    color: rgb(33, 150, 243) ;
+    position: relative;
+    text-align: center;
+}
