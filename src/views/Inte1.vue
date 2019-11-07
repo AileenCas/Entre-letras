@@ -36,7 +36,7 @@
     import Menu from './Menu'
     import calculo from "../calculoPuntoEXP"
     export default {
-        name: "Inte2",
+        name: "Inte1",
         components:{
             Toolbar, Menu
         },

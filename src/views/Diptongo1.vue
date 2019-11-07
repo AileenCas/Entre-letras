@@ -3,27 +3,27 @@
         <Toolbar/>
         <Menu/>
         <p>{{p}}</p><br>
-        <ion-list>
-            <ion-radio-group>
-                <ion-radio type="text" style="display: none" id="posicion"></ion-radio>
+        <ion-radio-group>
+            <ion-radio type="text" style="display: none" id="posicion"></ion-radio>
+            <ion-list>
                 <ion-item>
-                    <ion-label  class="Juego1" for="1">{{op1}}</ion-label>
                     <ion-radio id="1" type="radio" :value="op1" name="op"></ion-radio>
+                    <ion-label class="juego1" for="1">{{op1}}</ion-label>
                 </ion-item>
                 <ion-item>
-                    <ion-label class="Juego1" for="2">{{op2}}</ion-label>
                     <ion-radio id="2" type="radio" :value="op2" name="op"></ion-radio>
+                    <ion-label  class="juego1" for="2">{{op2}}</ion-label>
                 </ion-item>
                 <ion-item>
-                    <ion-label  class="Juego1" for="3">{{op3}}</ion-label>
                     <ion-radio id="3" type="radio" :value="op3" name="op"></ion-radio>
+                    <ion-label  class="juego1" for="3">{{op3}}</ion-label>
                 </ion-item>
                 <ion-item>
-                    <ion-label class="Juego1" for="4">{{op4}}</ion-label>
                     <ion-radio id="4" type="radio" :value="op4" name="op"></ion-radio>
+                    <ion-label   class="juego1" for="4">{{op4}}</ion-label>
                 </ion-item>
-            </ion-radio-group>
-        </ion-list>
+            </ion-list>
+        </ion-radio-group>
         <ion-button id="BtnR" class="btn btn-outline-success btn-block " @click="jugar()">¡Enviar!</ion-button>
         <hr>
         <span>Tu puntaje actual es de: {{puntaje}}</span>
@@ -36,7 +36,7 @@
     import Menu from './Menu'
     import calculo from "../calculoPuntoEXP"
     export default {
-        name: "Diptongo1",
+        name: "Diptongo",
         components:{
             Toolbar, Menu
         },
@@ -58,7 +58,7 @@
             }
         },
         mounted() {
-            firebase.firestore().collection("Diptongo2").doc(this.number.toString(10)).get().then(doc => {
+            firebase.firestore().collection("Diptongo ").doc(this.number.toString(10)).get().then(doc => {
                 this.p = doc.data().p;
                 this.op1 = doc.data().r1;
                 this.op2 = doc.data().r2;
@@ -78,7 +78,7 @@
                         this.rc = aux.value;
                     }
                 }
-                firebase.firestore().collection("Diptongo2").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("Diptongo ").doc(this.number.toString(10)).get().then(doc => {
                     if (doc.data().rc === this.rc) {
                         this.gano();
                         this.mostrarToast("¡Muy bien, has sumado un punto!");
@@ -107,7 +107,7 @@
                 this.op3 = '';
                 this.op4 = '';
                 this.p = '';
-                firebase.firestore().collection("Diptongo2").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("Diptongo").doc(this.number.toString(10)).get().then(doc => {
                     if (typeof (doc.data()) !== "undefined") {
                         this.p = doc.data().p;
                         this.op1 = doc.data().r1;
@@ -116,7 +116,7 @@
                         this.op4 = doc.data().r4;
                     } else {
                         this.number=1;
-                        firebase.firestore().collection("Diptongo2").doc("1").get().then(doc => {
+                        firebase.firestore().collection("Diptongo").doc("1").get().then(doc => {
                             this.p = doc.data().p;
                             this.op1 = doc.data().r1;
                             this.op2 = doc.data().r2;

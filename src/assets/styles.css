@@ -158,10 +158,11 @@ h3{
 .Juego {
     --background: WHITE;
     color: black;
-    font-size: 11px;
+    font-size: 10px;
 }
 .juego1{
     word-break: break-all;
+    font-size: 10px;
 }
 .Grid {
     border: 2px solid #76ffff;
