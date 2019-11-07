@@ -35,6 +35,7 @@
             </ion-list>
 
         </ion-page>
+        <h5>Copyright © 2019 | Entre letras</h5>
     </ion-app>
 </template>
 <script>
