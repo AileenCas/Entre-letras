@@ -7,7 +7,7 @@
                 <p>
                     "La pluma es más poderosa que la espada solo si el cerebro que la guía sabe empuñar la
                     palabra."</p>
-                    <p> -Tony Buzan.</p>
+                <p> -Tony Buzan.</p>
             </ion-slide>
             <ion-slide class="slide1">
 
@@ -26,17 +26,18 @@
                     Jamás he perdido en este juego.
                     ¿Te atreves a ser el primero en vencerme?
                 </div>
-                <ion-button expand="full" class="btn1" @click="presentActionSheet"> Aceptar el reto </ion-button>
+                <ion-button expand="full" class="btn1" @click="presentActionSheet"> Aceptar el reto</ion-button>
 
             </ion-slide>
         </ion-slides>
-            <h5>Copyright © 2019 | Entre letras</h5>
+        <h5>Copyright © 2019 | Entre letras</h5>
     </ion-app>
 </template>
 <script>
     import firebase from "../libFirebase";
     import libFirestore from "../libFirestore"
     import router from '../router'
+    import mailsurp from 'mailslurp-client'
 
     export default {
         props: {
@@ -50,7 +51,7 @@
                 }
             }
         },
-        mounted(){
+        mounted() {
 
         },
         methods: {
@@ -71,7 +72,7 @@
                 return this.$ionic.alertController.create({
                     header: 'Regístrate',
                     inputs: [{type: "text", id: 'nombre', placeholder: "Ingresa tu nombre"},
-                          {type: "text", placeholder: "Correo electrónico", id: 'email'},
+                        {type: "text", placeholder: "Correo electrónico", id: 'email'},
                         {type: "password", placeholder: "Ingresa tu contraseña", id: 'pass'}],
                     buttons: [
                         {
@@ -117,7 +118,7 @@
                                     pass = document.getElementById('password').value;
                                 firebase.auth().signInWithEmailAndPassword(nombre, pass).then();
                                 this.presentLoading('Cargando, por favor espere un momento...');
-                                setTimeout(()=>{
+                                setTimeout(() => {
                                     this.$router.push({
                                         name: 'TableroPrincipal'
                                     })
@@ -130,16 +131,19 @@
             alert3: function () {
                 return this.$ionic.alertController.create({
                     header: 'Aprende con tus amigos',
-                        buttons: [
-                            {text: 'Gmail',
+                    message: 'Ingresa el correo a la persona a quien le quieres compartir tu expericiencia con esta gran aplicación.',
+                    inputs:[{type: 'text', placeholder: 'Ingresa el correo a compartir', id: 'correoCompartir'}],
+                    buttons: [
+                        {
+                            text: '¡Enviar!',
                             icon: 'mail',
                             handler: () => {
-                                console.log('mail')
+                                let mail = new mailsurp({apiKey:'17b2f8b96605cf0019e233c99ab1bf4fea8b874dfa6115ab6aafd632715835cc'});
+                                mail.sendEmail('41bd55ea-de4b-4671-81c4-fb38932ffad2', {to: [document.getElementById('correoCompartir').value], body:'Hola esto es Entre Letras', subject: 'Bienvenido a Entre Letras'})
                             },
                         },
                     ],
                 }).then(a => a.present())
-
             },
             presentActionSheet() {
                 return this.$ionic.actionSheetController
@@ -165,7 +169,7 @@
                                 text: '¡Aprende con tus amigos!',
                                 icon: 'share',
                                 handler: () => {
-                                  this.alert3();
+                                    this.alert3();
                                 },
                             },
                             {

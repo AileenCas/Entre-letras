@@ -10,7 +10,10 @@
   "dependencies": {
     "@ionic/vue": "0.0.4",
     "core-js": "^2.6.5",
+    "dns": "^0.2.2",
+    "emailjs-com": "^2.4.0",
     "firebase": "^6.6.2",
+    "mailslurp-client": "^6.5.0",
     "vue": "^2.6.10",
     "vue-draggable": "^2.0.2",
     "vue-draggable-resizable": "^2.0.1",

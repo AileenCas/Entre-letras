@@ -4,8 +4,10 @@ import ionic from '@ionic/vue'
 import VueRouter from 'vue-router'
 import router from './router'
 
+
 Vue.use(ionic);
 Vue.use(VueRouter);
+
 Vue.config.productionTip = false;
 
 new Vue({
