@@ -157,12 +157,31 @@ h3{
 }
 .Juego {
     --background: WHITE;
-    color: black;
-    font-size: 10px;
+    color: rgb(33, 150, 243);
+    font-size: 12px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    width: 50px;
+    white-space: initial;
+    overflow:visible;
+    cursor: pointer;
+    height: 50px;
+
 }
-.juego1{
-    word-break: break-all;
-    font-size: 10px;
+ion-label{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.Juego1{
+    color: rgb(33, 150, 243);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: auto;
+    white-space: initial;
+    overflow: visible;
+    cursor: pointer;
 }
 .Grid {
     border: 2px solid #76ffff;

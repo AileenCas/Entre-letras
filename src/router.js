@@ -449,7 +449,7 @@ export default new Router({
             components:{main: Excla2}
         },
         {
-            path: '/tablero/temas/Inte2',
+            path: '/tablero/retos/Inte2',
             name: 'Inte2',
             // eslint-disable-next-line no-undef
             components: {main: Inte2}
@@ -461,7 +461,7 @@ export default new Router({
             components: {main: Inte}
         },
         {
-            path: '/tablero/temas/Inte1',
+            path: '/tablero/retos/Inte1',
             name: 'Inte1',
             // eslint-disable-next-line no-undef
             components: {main: Inte1}

@@ -58,7 +58,7 @@
             }
         },
         mounted() {
-            firebase.firestore().collection("Diptongo ").doc(this.number.toString(10)).get().then(doc => {
+            firebase.firestore().collection("Diptongo").doc(this.number.toString(10)).get().then(doc => {
                 this.p = doc.data().p;
                 this.op1 = doc.data().r1;
                 this.op2 = doc.data().r2;
@@ -78,7 +78,7 @@
                         this.rc = aux.value;
                     }
                 }
-                firebase.firestore().collection("Diptongo ").doc(this.number.toString(10)).get().then(doc => {
+                firebase.firestore().collection("Diptongo").doc(this.number.toString(10)).get().then(doc => {
                     if (doc.data().rc === this.rc) {
                         this.gano();
                         this.mostrarToast("¡Muy bien, has sumado un punto!");

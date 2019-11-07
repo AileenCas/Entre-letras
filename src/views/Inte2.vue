@@ -38,7 +38,6 @@
         components:{
             Toolbar, Menu
         },
-
         data() {
             return {
                 op1: '',
