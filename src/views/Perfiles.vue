@@ -11,7 +11,7 @@
         <ion-card><img src="../assets/P4.png" class="re1">  <ion-item class="i">Kevin Padilla.</ion-item></ion-card>
         <ion-card><img src="../assets/P5.png" class="re1">  <ion-item class="i">Lina Morón.</ion-item></ion-card>
         <ion-card><img src="../assets/P3.jpeg.jpg" class="re1"><ion-item class="i">Valentina García.</ion-item></ion-card>
-
+        <h5>Copyright © 2019 | Entre letras</h5>
     </div>
 </template>
 

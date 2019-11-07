@@ -7,19 +7,19 @@
             <ion-radio-group>
                 <ion-radio type="text" style="display: none" id="posicion"></ion-radio>
                 <ion-item>
-                    <ion-label for="1">{{op1}}</ion-label>
+                    <ion-label class="Juego1" for="1">{{op1}}</ion-label>
                     <ion-radio id="1" type="radio" :value="op1" name="op"></ion-radio>
                 </ion-item>
                 <ion-item>
-                    <ion-label for="2">{{op2}}</ion-label>
+                    <ion-label class="Juego1" for="2">{{op2}}</ion-label>
                     <ion-radio id="2" type="radio" :value="op2" name="op"></ion-radio>
                 </ion-item>
                 <ion-item>
-                    <ion-label for="3">{{op3}}</ion-label>
+                    <ion-label class="Juego1" for="3">{{op3}}</ion-label>
                     <ion-radio id="3" type="radio" :value="op3" name="op"></ion-radio>
                 </ion-item>
                 <ion-item>
-                    <ion-label for="4">{{op4}}</ion-label>
+                    <ion-label class="Juego1" for="4">{{op4}}</ion-label>
                     <ion-radio id="4" type="radio" :value="op4" name="op"></ion-radio>
                 </ion-item>
             </ion-radio-group>
@@ -36,7 +36,7 @@
     import Menu from './Menu'
     import calculo from "../calculoPuntoEXP"
     export default {
-        name: "Inte2",
+        name: "Inte1",
         components:{
             Toolbar, Menu
         },
