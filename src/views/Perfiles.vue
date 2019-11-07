@@ -9,7 +9,7 @@
         <ion-card><img src="../assets/P4.jpg" class="re">  <ion-button expand="full">Aileen Castro.</ion-button></ion-card>
         <ion-card><img src="../assets/P3.jpeg.jpg" class="re">  <ion-button expand="full">Keimmy García.</ion-button></ion-card>
         <ion-card><img src="../assets/P4.jpg" class="re">  <ion-button expand="full">Kevin Padilla.</ion-button></ion-card>
-        <ion-card><img src="../assets/P3.jpeg.jpg" class="re">  <ion-button expand="full">Lina Mor.</ion-button></ion-card>
+        <ion-card><img src="../assets/P3.jpeg.jpg" class="re">  <ion-button expand="full">Lina Morón.</ion-button></ion-card>
         <ion-card><img src="../assets/P3.jpeg.jpg" class="re">  <ion-button expand="full">Valentina García.</ion-button></ion-card>
 
     </div>
