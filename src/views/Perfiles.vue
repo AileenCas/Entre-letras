@@ -4,10 +4,13 @@
         <Menu/>
       <h2>¿Quieres conocernos?</h2>
         <img  class="re" src="../assets/icon-1.png" >
-        <ion-item>¡Hola! En este espacio podrás conocer a los creadores de éste mágico e inusual mundo de la ortografía.
-            ¡Echa un vistazo, amigo!</ion-item>
-        <ion-card><img src="../assets/P3.jpeg" class="re"></ion-card>
-
+        <h4 class="per"> ¡Hola! En este espacio podrás conocer a los creadores de éste mágico e inusual mundo de la ortografía.
+            ¡Echa un vistazo, amigo!</h4>
+        <ion-card><img src="../assets/P4.jpg" class="re">  <ion-button expand="full">Aileen Castro.</ion-button></ion-card>
+        <ion-card><img src="../assets/P3.jpeg.jpg" class="re">  <ion-button expand="full">Keimmy García.</ion-button></ion-card>
+        <ion-card><img src="../assets/P4.jpg" class="re">  <ion-button expand="full">Kevin Padilla.</ion-button></ion-card>
+        <ion-card><img src="../assets/P3.jpeg.jpg" class="re">  <ion-button expand="full">Lina Mor.</ion-button></ion-card>
+        <ion-card><img src="../assets/P3.jpeg.jpg" class="re">  <ion-button expand="full">Valentina García.</ion-button></ion-card>
 
     </div>
 </template>
