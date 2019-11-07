@@ -30,6 +30,7 @@
 
             </ion-slide>
         </ion-slides>
+            <h5>Copyright © 2019 | Entre letras</h5>
     </ion-app>
 </template>
 <script>

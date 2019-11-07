@@ -159,10 +159,26 @@ h3{
     --background: #D5EFF2;
     color: black;
 }
-.Grid{
+.Grid {
     border: 2px solid #76ffff;
     COLOR: WHITE;
     FONT-SIZE: 18px;
     display: flex;
     flex-direction: column;
+}
+
+h5{
+    color: white;
+    position: relative;
+    text-align: center;
+}
+.h5{
+    color:  rgb(33, 150, 243);
+    position: relative;
+    text-align: center;
+}
+.h6{
+    color: #424242;
+    position: relative;
+    text-align: center;
 }

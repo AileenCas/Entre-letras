@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import TableroPrincipal from "./views/TableroPrincipal";
 import Toolbar from "./views/Toolbar";
 import Perfil from "./views/Perfil";
+import Perfiles from "./views/Perfiles";
 import Bienvenida from "./views/Bienvenida";
 import Temas from "./views/Temas";
 import retos from "./views/Retos";
@@ -132,6 +133,15 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             components: {main: Perfil}
+
+        },
+        {
+            path: '/tablero/Menu/Perfiles',
+            name: 'Perfiles',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            components: {main: Perfiles}
 
         },
         {

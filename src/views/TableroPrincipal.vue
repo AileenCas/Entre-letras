@@ -23,7 +23,9 @@
                 <ion-card-title>Curiosidades</ion-card-title>
             </ion-card-header>
         </ion-card>
+            <h5 class="h5">Copyright © 2019 | Entre letras</h5>
         </ion-list>
+
     </div>
 </template>
 
