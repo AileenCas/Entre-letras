@@ -33,6 +33,7 @@
     import Menu from './Menu'
     import Toolbar from './Toolbar'
     import router from '../router'
+    import firebase from 'firebase'
 
     export default {
         name: "TableroPrincipal",
@@ -47,6 +48,7 @@
             }
         },
         mounted() {
+            console.log(firebase.auth().currentUser)
         }
     }
 </script>

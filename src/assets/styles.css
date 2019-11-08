@@ -13,6 +13,22 @@ body{
     width: inherit;
 }
 
+@media screen and (min-width: 1024px){
+    .logo {
+        width: 35%!important;
+    }
+    .img2{
+        width: 25%!important;
+        height: 25%!important;
+    }
+    .btn1{
+        width: 50%;
+    }
+    .cont {
+        width: 50%;
+    }
+}
+
 @media screen and (max-width: 402px){
     .btn2{
         max-width: 98%;
@@ -67,8 +83,8 @@ P {
 }
 
  .img2 {
-     width: 90%!important;
-     height: 90%!important;
+     width: 90%;
+     height: 90%;
  }
 
 .card1{
