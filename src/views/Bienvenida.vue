@@ -81,23 +81,31 @@
                                 let email = document.getElementById('email').value,
                                     pass = document.getElementById('pass').value,
                                     nombre = document.getElementById('nombre').value;
-                                firebase.auth().signOut().then();
-                                firebase.auth().createUserWithEmailAndPassword(email, pass).then();
-                                this.presentLoading('Registrando su cuenta, por favor, espere un momento...');
-                                libFirestore.collection('usuarios').doc(email).set({
-                                    nombre: nombre,
-                                    exp: 0,
-                                    nivel: 1
-                                });
-                                setTimeout(function () {
-                                    firebase.auth().signInWithEmailAndPassword(email, pass).then();
-                                    firebase.auth().currentUser.updateProfile({
-                                        displayName: nombre
-                                    }).then();
-                                    router.push({
-                                        name: 'TableroPrincipal'
-                                    })
-                                }, 5000);
+                                if (email === '') {
+                                    this.mostrarToast('Ingresa un correo valido, por favor.');
+                                } else if (nombre === '') {
+                                    this.mostrarToast('Ingresa un nombre completo valido, por favor.');
+                                } else if (pass === '') {
+                                    this.mostrarToast('Ingresa una contraseña valida, por favor.');
+                                } else {
+                                    firebase.auth().signOut().then();
+                                    firebase.auth().createUserWithEmailAndPassword(email, pass).then();
+                                    this.presentLoading('Registrando su cuenta, por favor, espere un momento...');
+                                    libFirestore.collection('usuarios').doc(email).set({
+                                        nombre: nombre,
+                                        exp: 0,
+                                        nivel: 1
+                                    });
+                                    setTimeout(function () {
+                                        firebase.auth().signInWithEmailAndPassword(email, pass).then();
+                                        firebase.auth().currentUser.updateProfile({
+                                            displayName: nombre
+                                        }).then();
+                                        router.push({
+                                            name: 'TableroPrincipal'
+                                        })
+                                    }, 5000);
+                                }
                             },
                         },
                         'Cancelar']
@@ -127,6 +135,14 @@
                         },
                         'Cancelar']
                 }).then(a => a.present());
+            },
+            mostrarToast: async function(mensaje){
+                const toast = await this.$ionic.toastController.create({
+                    message: mensaje,
+                    duration: 3000,
+                    position: "bottom"
+                });
+                await toast.present();
             },
             alert3: function () {
                 return this.$ionic.alertController.create({

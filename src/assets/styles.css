@@ -27,6 +27,11 @@ body{
     .cont {
         width: 50%;
     }
+    .alert-wrapper.sc-ion-alert-md {
+        border-radius: 4px;
+        max-width: 777px;
+        width: 777px;
+    }
 }
 
 @media screen and (max-width: 402px){
