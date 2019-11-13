@@ -138,8 +138,14 @@
                             text: '¡Enviar!',
                             icon: 'mail',
                             handler: () => {
-                                let mail = new mailsurp({apiKey:'17b2f8b96605cf0019e233c99ab1bf4fea8b874dfa6115ab6aafd632715835cc'});
-                                mail.sendEmail('41bd55ea-de4b-4671-81c4-fb38932ffad2', {to: [document.getElementById('correoCompartir').value], body:'Hola esto es Entre Letras', subject: 'Bienvenido a Entre Letras'})
+                                let mail = new mailsurp({apiKey: '17b2f8b96605cf0019e233c99ab1bf4fea8b874dfa6115ab6aafd632715835cc'});
+                                mail.sendEmail('41bd55ea-de4b-4671-81c4-fb38932ffad2', {
+                                    to: [document.getElementById('correoCompartir').value],
+                                    body: '¡Hola! Bienvenido a Entre Letras.                                                                                                                                                                                                   ' +
+                                        ' ¿Quieres adentarte en el maravilloso mundo de la ortografía? Ingresa en la siguiente dirección.                                                                                       ' +
+                                        'http://colsam.com.co/entreletras/',
+                                    subject: 'Bienvenido a Entre Letras'
+                                })
                             },
                         },
                     ],
